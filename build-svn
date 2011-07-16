@@ -1,0 +1,83 @@
+#!/bin/bash
+
+SBDIR=$(pwd)
+SBPKGDIR="$SBDIR/+packages-$(date +%F)"
+SBLOG="$SBDIR/build-$(date +%F).log"
+set -o pipefail
+
+build_svn()
+{
+	echo -e "\n*** Start building $1 ($(date +%T)) ***\n" | tee -a "$SBLOG"
+	cd "$1" || return 1 
+	"./$1-svn.SlackBuild" || { echo "Failed to build $1" | tee -a "$SBLOG"; return 1; }
+	echo "Finished building $1 ($(date +%T))" | tee -a "$SBLOG"
+	cd "$SBDIR" || return 1
+	if [[ $ARCH ]]; then
+		upgradepkg --install-new --reinstall "$1/$1-*-$ARCH-*.t[gx]z" | tee -a "$SBLOG" || return 1
+		mv $1/$1-*-$ARCH-*.t[gx]z "$SBPKGDIR" || return 1
+	else
+		upgradepkg --install-new --reinstall "$1/$1-*-*-*.t[gx]z" | tee -a "$SBLOG" || return 1
+		mv $1/$1-*-*-*.t[gx]z "$SBPKGDIR" || return 1
+	fi
+}
+
+prompt_exit()
+{
+	read -p "Do you want to continue? [y/N] " SBANS
+	if [[ "$SBANS" != [yY] ]]; then
+		exit 1
+	fi
+	cd "$SBDIR" || return 1
+}
+
+
+echo "[ E17 BUILD START $(date +%T) ]" | tee -a "$SBLOG" || exit 1
+mkdir -p "$SBPKGDIR"
+
+# EFL
+build_svn  eina                  || prompt_exit
+build_svn  eet                   || prompt_exit
+build_svn  evas                  || prompt_exit
+build_svn  evas_generic_loaders  || prompt_exit
+build_svn  ecore                 || prompt_exit
+build_svn  embryo                || prompt_exit
+build_svn  edje                  || prompt_exit
+build_svn  e_dbus                || prompt_exit
+build_svn  efreet                || prompt_exit
+build_svn  eeze                  || prompt_exit
+
+# Misc. libs and apps
+build_svn  eio                   || prompt_exit
+build_svn  emotion               || prompt_exit
+build_svn  emprint               || prompt_exit
+build_svn  ethumb                || prompt_exit
+build_svn  libeweather           || prompt_exit
+build_svn  epdf                  || prompt_exit
+# build_svn  eyesight              || prompt_exit
+build_svn  elementary            || prompt_exit
+build_svn  ephoto                || prompt_exit
+build_svn  envision              || prompt_exit
+build_svn  exalt                 || prompt_exit
+# build_svn  elsa                  || prompt_exit
+# build_svn  enjoy                 || prompt_exit
+
+# Enlightenment
+build_svn  enlightenment         || prompt_exit
+build_svn  e_modules-efm_nav     || prompt_exit
+build_svn  e_modules-efm_path    || prompt_exit
+build_svn  e_modules-efm_pathbar || prompt_exit
+build_svn  e_modules-screenshot  || prompt_exit
+build_svn  e_modules-taskbar     || prompt_exit
+build_svn  e_modules-tiling      || prompt_exit
+build_svn  e_modules-engage      || prompt_exit
+build_svn  e_modules-exalt-client|| prompt_exit
+build_svn  e_modules-eweather    || prompt_exit
+# build_svn  e_modules-mpdule      || prompt_exit
+# build_svn  e_modules-calendar    || prompt_exit
+# build_svn  e_modules-weather     || prompt_exit
+# wlan
+
+# Themes
+cd themes
+. themes-svn.build || prompt_exit
+cd -

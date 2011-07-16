@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+      |-----handy-ruler------------------------------------------------------|
+enjoy: Enjoy - Music Player
+enjoy:
+enjoy: Enjoy is a music player written using Enlightenment Foundation Libraries
+enjoy: with focus on speed and mobile usability, yet should be usable on
+enjoy: desktops as well. Enjoy is modeled around a media database constructed by
+enjoy: LightMediaScanner, it is not meant to play single files from disk, instead
+enjoy: it will recursively index directories for music files and then list them
+enjoy: by artist, album, genre and so on. Playlists are also supported, as well
+enjoy: as random or filter playlists can be dynamically generated.
+enjoy: 
+enjoy:                  http://enlightenment.org

@@ -1,0 +1,44 @@
+#!/bin/sh
+# http://www.enlightenment.org/
+
+
+CWD=`pwd`
+TMP=${TMP:-/tmp/tgz/e17}
+
+if [ ! -d $TMP ]; then
+ mkdir -p $TMP
+fi
+
+
+NAME=efenniht
+SOURCE=http://svn.enlightenment.org/svn/e/trunk/THEMES/$NAME
+
+echo -e "\n*** Start building $NAME ($(date +%T)) ***\n" | tee -a "$SBLOG"
+
+svn checkout $SOURCE $TMP/$NAME || exit 1
+VERSION=`svn -q -r COMMITTED log $TMP/$NAME | head -n 2 | tail -n 1 | cut -d\  -f1`
+VERSION=${VERSION:-`date +%Y%m%d`}
+
+echo -e "\E[0;32m Build $NAME-$VERSION \E[0;0m"
+
+cd $TMP/$NAME
+make
+chmod 644 $NAME.edj
+cp $NAME.edj $CWD
+
+
+NAME=detourious
+SOURCE=http://svn.enlightenment.org/svn/e/trunk/THEMES/$NAME
+
+echo -e "\n*** Start building $NAME ($(date +%T)) ***\n" | tee -a "$SBLOG"
+
+svn checkout $SOURCE $TMP/$NAME || exit 1
+VERSION=`svn -q -r COMMITTED log $TMP/$NAME | head -n 2 | tail -n 1 | cut -d\  -f1`
+VERSION=${VERSION:-`date +%Y%m%d`}
+
+echo -e "\E[0;32m Build $NAME-$VERSION \E[0;0m"
+
+cd $TMP/$NAME
+make
+chmod 644 $NAME.edj
+cp $NAME.edj $CWD

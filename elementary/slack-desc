@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+         |-----handy-ruler------------------------------------------------------|
+elementary: elementary (EFL toolkit for small touchscreens)
+elementary:
+elementary: Elementary is a widget set. It is a new-style of widget set much more canvas
+elementary: object based than anything else. Why not ETK? Why not EWL? Well they both
+elementary: tend to veer away from the core of Evas, Ecore and Edje a lot to build their
+elementary: own worlds. Also I wanted something focused on embedded devices -
+elementary: specifically small touchscreens. Unlike GTK+ and Qt, 75% of the "widget set"
+elementary: is already embodied in a common core - Ecore, Edje, Evas etc. So this
+elementary: fine-grained library splitting means all of this is shared, just a new
+elementary: widget "personality" is on top.
+elementary:                       http://trac.enlightenment.org/e/wiki/Elementary

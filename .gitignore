@@ -1,0 +1,7 @@
+*~
+*.log
+*.gz
+*.bz2
+*.xz
+*.t[gblx]z
+slack-required
