@@ -48,6 +48,7 @@ build_svn  eeze                  || prompt_exit
 
 # Misc. libs and apps
 build_svn  eio                   || prompt_exit
+build_svn  emap                  || prompt_exit
 build_svn  emotion               || prompt_exit
 build_svn  emprint               || prompt_exit
 build_svn  ethumb                || prompt_exit
