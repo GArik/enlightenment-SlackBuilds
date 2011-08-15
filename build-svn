@@ -64,6 +64,7 @@ build_svn  exalt                 || prompt_exit
 
 # Enlightenment
 build_svn  enlightenment         || prompt_exit
+build_svn  e_modules-comp-scale  || prompt_exit
 build_svn  e_modules-screenshot  || prompt_exit
 build_svn  e_modules-taskbar     || prompt_exit
 build_svn  e_modules-tiling      || prompt_exit
