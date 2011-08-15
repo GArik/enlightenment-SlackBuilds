@@ -48,18 +48,19 @@ build_svn  eeze                  || prompt_exit
 
 # Misc. libs and apps
 build_svn  eio                   || prompt_exit
+# PROTO/
+build_svn  epdf                  || prompt_exit
+# build_svn  eyesight              || prompt_exit
+build_svn  libeweather           || prompt_exit
 build_svn  emap                  || prompt_exit
+# build_svn  elsa                  || prompt_exit
 build_svn  emotion               || prompt_exit
 build_svn  emprint               || prompt_exit
 build_svn  ethumb                || prompt_exit
-build_svn  libeweather           || prompt_exit
-build_svn  epdf                  || prompt_exit
-# build_svn  eyesight              || prompt_exit
 build_svn  elementary            || prompt_exit
 build_svn  ephoto                || prompt_exit
 build_svn  envision              || prompt_exit
 build_svn  exalt                 || prompt_exit
-# build_svn  elsa                  || prompt_exit
 # build_svn  enjoy                 || prompt_exit
 
 # Enlightenment
