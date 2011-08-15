@@ -92,6 +92,7 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/slack-desc > $PKG/usr/doc/$NAME-$VERSION/slack-desc
 cat $CWD/$NAME-svn.SlackBuild > $PKG/usr/doc/$NAME-$VERSION/$NAME-svn.SlackBuild
 
+ADD="enlightenment" \
 requiredbuilder -v -y -s $CWD $PKG
 if [ -x /bin/xz ]; then
  makepkg -l y -c n $CWD/$NAME-$VERSION-$ARCH-$BUILD.txz
