@@ -1,0 +1,17 @@
+#!/bin/bash
+
+SBDIR=$(pwd)
+SBFULLDEP="$SBDIR/depgraph-full.dot"
+SBDEP="$SBDIR/depgraph.dot"
+
+# build graph
+echo "digraph G {" > "$SBFULLDEP"
+for i in `ls */slack-required`; do
+  name=$(echo $i | cut -f1 -d/)
+  sed -e "s|^\([^ ]*\) *.*$|\"$name\" -> \"\1\";|g" $i >> "$SBFULLDEP"
+  echo $name
+done
+echo "}" >> "$SBFULLDEP"
+
+# reduce number of vertexes to make graph understandable
+tred "$SBFULLDEP" > "$SBDEP"

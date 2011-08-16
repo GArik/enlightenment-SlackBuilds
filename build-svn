@@ -81,3 +81,6 @@ build_svn  e_modules-eweather    || prompt_exit
 cd themes
 . themes-svn.build || prompt_exit
 cd -
+
+# Update dependencies graph
+./depgraph
