@@ -8,9 +8,11 @@ SBDEP="$SBDIR/depgraph.dot"
 echo "digraph G {" > "$SBFULLDEP"
 for i in `ls */slack-required`; do
   name=$(echo $i | cut -f1 -d/)
+  echo "\"$name\" [shape=box];" >> "$SBFULLDEP"
   sed -e "s|^\([^ ]*\) *.*$|\"$name\" -> \"\1\";|g" $i >> "$SBFULLDEP"
   echo $name
 done
+echo 'label="Dependencies graph for e17"' >> "$SBFULLDEP"
 echo "}" >> "$SBFULLDEP"
 
 # reduce number of vertexes to make graph understandable
