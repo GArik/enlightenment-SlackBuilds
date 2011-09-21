@@ -40,7 +40,12 @@ prompt_exit()
 try_build_svn()
 {
 	while true; do
-		build_svn "$@" || prompt_exit "$1" || break
+		build_svn "$@"
+		if [[ $? == 0 ]]; then
+			break
+		else
+			prompt_exit "$1"
+		fi
 	done
 }
 
