@@ -91,10 +91,10 @@ try_build_svn  e_modules-tiling
 try_build_svn  e_modules-engage
 try_build_svn  e_modules-exalt-client
 try_build_svn  e_modules-eweather
+# try_build_svn  e_modules-eenvader.fractal
 # try_build_svn  e_modules-mpdule
 # try_build_svn  e_modules-calendar
 # try_build_svn  e_modules-weather
-# try_build_svn  eenvader
 # wlan
 
 # Themes
