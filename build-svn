@@ -67,6 +67,7 @@ try_build_svn  eeze
 # Misc. libs and apps
 try_build_svn  eio
 # PROTO/
+try_build_svn  azy
 try_build_svn  epdf
 # try_build_svn  eyesight
 try_build_svn  libeweather
