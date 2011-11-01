@@ -12,7 +12,7 @@ SOURCE=http://svn.enlightenment.org/svn/e/trunk/E-MODULES-EXTRA/engage
 
 # getting source codes
 svn checkout $SOURCE $TMP/$NAME || exit 1
-VERSION=`svn -q -r COMMITTED log $TMP/$NAME | head -n 2 | tail -n 1 | cut -d\  -f1`
+VERSION=`svn -q -r COMMITTED log $TMP/$NAME | grep -o '^r[0-9]\+'`
 VERSION=${VERSION:-`date +%Y%m%d`}
 
 CHOST=i486
