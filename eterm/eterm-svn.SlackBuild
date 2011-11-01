@@ -1,12 +1,11 @@
 #!/bin/sh
-# Heavily based on the Slackware 13.1 SlackBuild
 # http://www.enlightenment.org/
 
 NAME=eterm
 ARCH=${ARCH:-i686}
 BUILD=1ga
 CWD=`pwd`
-TMP=${TMP:-/tmp/tgz}
+TMP=${TMP:-/tmp/tgz/e17}
 PKG=$TMP/package-$NAME
 
 SOURCE=http://svn.enlightenment.org/svn/e/trunk/eterm/Eterm
