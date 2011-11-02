@@ -44,7 +44,7 @@ try_build_svn()
 		if [[ $? == 0 ]]; then
 			break
 		else
-			prompt_exit "$1"
+			prompt_exit "$1" || break
 		fi
 	done
 }
