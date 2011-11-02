@@ -10,10 +10,6 @@ PKG=$TMP/package-$NAME
 
 SOURCE=http://svn.enlightenment.org/svn/e/trunk/e
 
-# getting source codes
-svn checkout $SOURCE $TMP/$NAME || exit 1
-VERSION=`svn -q -r COMMITTED log $TMP/$NAME | grep -o '^r[0-9]\+'`
-VERSION=${VERSION:-`date +%Y%m%d`}
 
 CHOST=i486
 LIBDIRSUFFIX=""
@@ -44,6 +40,18 @@ fi
 if [ ! -d $PKG ]; then
  mkdir -p $PKG
 fi
+
+# getting source codes
+if [ ! -d $TMP/$NAME ]; then
+  svn checkout $SOURCE $TMP/$NAME || exit 1
+else
+  cd $TMP/$NAME || exit 1
+  svn up --accept theirs-conflict || exit 1
+fi
+
+# get version from svn
+VERSION=`svn -q -r COMMITTED log $TMP/$NAME | grep -o '^r[0-9]\+'`
+VERSION=${VERSION:-`date +%Y%m%d`}
 
 cd $TMP
 
