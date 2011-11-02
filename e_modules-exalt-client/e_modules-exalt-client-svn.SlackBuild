@@ -106,7 +106,3 @@ if [ -x /bin/xz ]; then
 else
  makepkg -l y -c n $CWD/$NAME-$VERSION-$ARCH-$BUILD.tgz
 fi
-
-if [ "$1" = "--cleanup" ]; then
-  rm -rf $TMP
-fi
