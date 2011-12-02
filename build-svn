@@ -1,8 +1,8 @@
 #!/bin/bash
 
 SBDIR=$(pwd)
-SBPKGDIR="$SBDIR/+packages-$(date +%F)"
-SBLOG="$SBDIR/build-$(date +%F).log"
+SBPKGDIR="$SBDIR/+packages-svn-$(date +%F)"
+SBLOG="$SBDIR/build-svn-$(date +%F).log"
 set -o pipefail
 
 build_svn()
