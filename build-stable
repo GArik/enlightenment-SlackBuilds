@@ -63,3 +63,6 @@ try_build  edje
 try_build  efreet
 try_build  e_dbus
 try_build  eeze
+
+# Misc. libs and apps
+try_build  expedite
