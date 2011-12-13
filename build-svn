@@ -72,11 +72,11 @@ try_build_svn  epdf
 # try_build_svn  eyesight
 try_build_svn  libeweather
 try_build_svn  emap
-# try_build_svn  elsa
 try_build_svn  emotion
 try_build_svn  emprint
 try_build_svn  ethumb
 try_build_svn  elementary
+try_build_svn  elsa
 try_build_svn  ephoto
 try_build_svn  envision
 try_build_svn  exalt
