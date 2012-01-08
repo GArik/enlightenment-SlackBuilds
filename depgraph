@@ -15,5 +15,5 @@ done
 echo 'label="Dependencies graph for e17"' >> "$SBFULLDEP"
 echo "}" >> "$SBFULLDEP"
 
-# reduce number of vertexes to make graph understandable
+# reduce number of edges to make graph understandable
 tred "$SBFULLDEP" > "$SBDEP"
