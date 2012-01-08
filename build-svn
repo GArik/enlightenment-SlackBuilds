@@ -72,6 +72,7 @@ try_build_svn  epdf
 # try_build_svn  eyesight
 try_build_svn  libeweather
 try_build_svn  emap
+try_build_svn  esskyuehl
 try_build_svn  eupnp
 try_build_svn  emotion
 try_build_svn  emprint
