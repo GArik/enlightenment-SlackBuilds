@@ -1,0 +1,36 @@
+This is a collection of SlackBuilds for building e17 [1] packages for
+Slackware GNU/Linux [2].
+
+You only need to run one single script 'build-svn' to build all the packages.
+Like this:
+
+  # ./build-svn
+
+Or if you have Slackware64, you should run it this way:
+
+  # ARCH=x86_64 ./build-svn
+
+Script will build and then install every package. Packages will be available
+in the +packages-svn-$(date +%F)/ directory; themes will be available in the
+themes/. It also computes pretty dependencies graph which you can view with
+dotty(1) or kgraphviewer (you will need requiredbuilder [3] and graphviz [4]).
+
+There are also SlackBuilds for stable versions of the e17 packages and the
+script called 'build-stable' that works in the same manner as 'build-svn'.
+
+Note that all SlackBuilds are completely independent from each other. So if
+you want to update only one component, you can do it easily. Let's assume you
+need fresh version of ephoto application. You build the package like this:
+
+  # cd ephoto
+  # ./ephoto-svn.SlackBuild
+
+This will build the package for you. You can then upgrade/install it with
+
+  # upgradepkg --install-new ephoto-*.txz
+
+
+[1] http://enlightenment.org
+[2] http://slackware.com
+[3] http://www.stabellini.net/requiredbuilder.html
+[4] http://graphviz.org
