@@ -5,12 +5,12 @@
 # exactly 11 lines for the formatting to be correct.  It's also customary to
 # leave one space after the ':'.
 
-         |-----handy-ruler------------------------------------------------------|
+        |-----handy-ruler------------------------------------------------------|
 eyesight: Eyesight (Multi-Document Rendering Library)
 eyesight: 
 eyesight: Eyesight is a multi-document rendering library
 eyesight: Current supported document formats: PDF, PostScript, TXT,
-eyesight: Images and Comic Books
+eyesight: Images and Comic Books.
 eyesight: 
 eyesight: 
 eyesight:              http://www.enlightenment.org

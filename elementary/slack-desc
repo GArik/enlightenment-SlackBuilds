@@ -5,8 +5,8 @@
 # exactly 11 lines for the formatting to be correct.  It's also customary to
 # leave one space after the ':'.
 
-         |-----handy-ruler------------------------------------------------------|
-elementary: elementary (EFL toolkit for small touchscreens)
+          |-----handy-ruler------------------------------------------------------|
+elementary: Elementary (EFL toolkit for small touchscreens)
 elementary:
 elementary: Elementary is a widget set. It is a new-style of widget set much more canvas
 elementary: object based than anything else. Why not ETK? Why not EWL? Well they both

@@ -5,8 +5,8 @@
 # exactly 11 lines for the formatting to be correct.  It's also customary to
 # leave one space after the ':'.
 
-                  |-----handy-ruler------------------------------------------------------|
-e_modules-screenshot: screenshot module for the Enlightenment window manager
+                    |-----handy-ruler------------------------------------------------------|
+e_modules-screenshot: Screenshot module for the Enlightenment window manager
 e_modules-screenshot:
 e_modules-screenshot: This module is a port of the e16 epplet E-Screenshot by Tom Gilbert.
 e_modules-screenshot: 

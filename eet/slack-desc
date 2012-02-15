@@ -5,8 +5,8 @@
 # exactly 11 lines for the formatting to be correct.  It's also customary to
 # leave one space after the ':'.
 
-    |-----handy-ruler------------------------------------------------------|
-eet: eet (Library for speedy data storage, retrieval, and compression)
+   |-----handy-ruler------------------------------------------------------|
+eet: Eet (Library for speedy data storage, retrieval, and compression)
 eet:
 eet: Eet is a tiny library designed to write an arbitrary set of chunks of
 eet: data to a file and optionally compress each chunk (very much like a

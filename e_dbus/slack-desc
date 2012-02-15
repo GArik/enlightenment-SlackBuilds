@@ -6,9 +6,9 @@
 # leave one space after the ':'.
 
       |-----handy-ruler------------------------------------------------------|
-e_dbus: e_dbus (EFL Wrapper for DBus)
+e_dbus: E_dbus (EFL Wrapper for DBus)
 e_dbus:
-e_dbus: e_dbus provides a convenience wrapper for EFL applications using DBus.
+e_dbus: E_dbus provides a convenience wrapper for EFL applications using DBus.
 e_dbus: 
 e_dbus: 
 e_dbus:              http://www.enlightenment.org

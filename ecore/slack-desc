@@ -6,7 +6,7 @@
 # leave one space after the ':'.
 
      |-----handy-ruler------------------------------------------------------|
-ecore: ecore (Enlightened Core X interface library)
+ecore: Ecore (Enlightened Core X interface library)
 ecore:
 ecore: Ecore is the event/X abstraction layer that makes doing selections,
 ecore: Xdnd, general X stuff, event loops, timeouts and idle handlers fast,

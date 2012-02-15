@@ -8,12 +8,12 @@
          |-----handy-ruler------------------------------------------------------|
 esskyuehl: Esskyuehl (SQL library)
 esskyuehl: 
-esskyuehl: Esskyuehl is a SQL convenience library for EFL.
+esskyuehl: Esskyuehl (ESQL) is a completely asynchronous client-side SQL library.
+esskyuehl: It robustly supports both event-driven and callback-driven models for
+esskyuehl: handling responses, and it uses a dynamic module-loading interface for
+esskyuehl: its SQL server compatibility.
 esskyuehl: 
 esskyuehl: 
 esskyuehl:              http://www.enlightenment.org
-esskyuehl: 
-esskyuehl: 
-esskyuehl: 
 esskyuehl: 
 esskyuehl: 

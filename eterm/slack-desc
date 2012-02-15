@@ -5,7 +5,7 @@
 # exactly 11 lines for the formatting to be correct.  It's also customary to
 # leave one space after the ':'.
 
-       |-----handy-ruler------------------------------------------------------|
+     |-----handy-ruler------------------------------------------------------|
 eterm: Eterm (Enlightened terminal emulator)
 eterm:
 eterm: Eterm is a color vt102 terminal emulator with enhanced graphical
@@ -13,7 +13,7 @@ eterm: capabilities.  Eterm is intended to be a replacement for xterm for
 eterm: Enlightenment window manager users, but it can also be used as a
 eterm: replacement for xterm by users without Enlightenment.  Eterm supports
 eterm: various themes and is very configurable, in keeping with the
-eterm: philosophy of Enlightenment. If you install Eterm, you'll also need to
-eterm: have the Imlib2 library installed.
+eterm: philosophy of Enlightenment. If you install Eterm, you'll also need
+eterm: to have the Imlib2 library installed.
 eterm: 
 eterm:                  http://enlightenment.org

@@ -6,14 +6,14 @@
 # leave one space after the ':'.
 
     |-----handy-ruler------------------------------------------------------|
-evas: evas (Multi-platform Canvas Library)
+evas: Evas (Multi-platform Canvas Library)
 evas:
-evas: Evas is a clean display canvas API for several target display systems
-evas: that can draw anti-aliased text, smooth super and sub-sampled scaled
-evas: images, alpha-blend objects much and more.
+evas: Evas is a clean display canvas API that implements a scene graph,
+evas: not an immediate-mode rendering target, is cross-platform, for
+evas: several target display systems that can draw anti-aliased text,
+evas: smooth super and sub-sampled scaled images, alpha-blend objects
+evas: and much more.
 evas: 
 evas: 
 evas:              http://www.enlightenment.org
-evas: 
-evas: 
 evas: 

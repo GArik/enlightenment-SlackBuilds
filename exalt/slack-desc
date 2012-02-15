@@ -5,10 +5,10 @@
 # exactly 11 lines for the formatting to be correct.  It's also customary to
 # leave one space after the ':'.
 
-      |-----handy-ruler------------------------------------------------------|
+     |-----handy-ruler------------------------------------------------------|
 exalt: Exalt
 exalt: 
-exalt: Exalt is a efl based front end network manager. It already has every
+exalt: Exalt is a EFL based front end network manager. It already has every
 exalt: feature you need to setup basic networking both wired and wireless,
 exalt: and comes with the added benefit of having a module for quick network
 exalt: switching.

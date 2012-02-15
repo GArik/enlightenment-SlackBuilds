@@ -6,7 +6,7 @@
 # leave one space after the ':'.
 
       |-----handy-ruler------------------------------------------------------|
-embryo: embryo (A small virtual machine engine and bytecode compiler)
+embryo: Embryo (A small virtual machine engine and bytecode compiler)
 embryo:
 embryo: Embryo is a tiny library designed as a virtual machine to interpret a
 embryo: limited set of small compiled programs.

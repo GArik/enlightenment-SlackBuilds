@@ -5,15 +5,15 @@
 # exactly 11 lines for the formatting to be correct.  It's also customary to
 # leave one space after the ':'.
 
-    |-----handy-ruler------------------------------------------------------|
+   |-----handy-ruler------------------------------------------------------|
 azy: Azy (Lazy RPC client/server library)
 azy: 
 azy: Azy is a full rewrite of libzxr, itself a modification of libxr.
-azy: It provides functions for manipulating RPC clients/servers as well as RSS feeds.
+azy: It provides functions for manipulating RPC clients/servers
+azy: as well as RSS feeds.
+azy: 
 azy: 
 azy:              http://www.enlightenment.org
-azy: 
-azy: 
 azy: 
 azy: 
 azy: 

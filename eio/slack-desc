@@ -5,8 +5,8 @@
 # exactly 11 lines for the formatting to be correct.  It's also customary to
 # leave one space after the ':'.
 
-    |-----handy-ruler------------------------------------------------------|
-eio: eio (Enlightenned Asynchronous Input Output library)
+   |-----handy-ruler------------------------------------------------------|
+eio: Eio (Enlightenned Asynchronous Input Output library)
 eio: 
 eio: This library is intended to provide non blocking IO by using thread
 eio: for all operation that may block. It depends only on eina and ecore

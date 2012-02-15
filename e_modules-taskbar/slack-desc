@@ -5,8 +5,8 @@
 # exactly 11 lines for the formatting to be correct.  It's also customary to
 # leave one space after the ':'.
 
-                |-----handy-ruler------------------------------------------------------|
-e_modules-taskbar: taskbar module for the Enlightenment window manager
+                 |-----handy-ruler------------------------------------------------------|
+e_modules-taskbar: Taskbar module for the Enlightenment window manager
 e_modules-taskbar:
 e_modules-taskbar: It gives you a taskbar!
 e_modules-taskbar: 
