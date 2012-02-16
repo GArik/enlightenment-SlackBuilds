@@ -84,7 +84,7 @@ try_build_svn  ecrire
 try_build_svn  ephoto
 try_build_svn  envision
 try_build_svn  exalt
-# try_build_svn  enjoy
+try_build_svn  enjoy
 try_build_svn  equate
 
 # Enlightenment
