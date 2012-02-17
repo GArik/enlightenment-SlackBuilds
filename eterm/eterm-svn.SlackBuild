@@ -1,5 +1,5 @@
 #!/bin/sh
-# http://www.enlightenment.org/
+# http://www.eterm.org
 
 NAME=eterm
 ARCH=${ARCH:-i686}
