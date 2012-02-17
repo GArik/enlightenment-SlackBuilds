@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+      |-----handy-ruler------------------------------------------------------|
+libast: libast (Library of Assorted Spiffy Things)
+libast: 
+libast: LibAST is the Library of Assorted Spiffy Things.  It contains various
+libast: handy routines and drop-in substitutes for some good-but-non-portable
+libast: functions.  It currently has a built-in memory tracking subsystem as
+libast: well as some debugging aids and other similar tools.
+libast: 
+libast: 
+libast:                  http://www.eterm.org
+libast: 
+libast: 
