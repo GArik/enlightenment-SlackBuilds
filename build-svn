@@ -2,6 +2,7 @@
 
 SBDIR=$(pwd)
 SBPKGDIR="$SBDIR/+packages-svn-$(date +%F)"
+SBTHMDIR="$SBDIR/+themes-svn-$(date +%F)"
 SBLOG="$SBDIR/build-svn-$(date +%F).log"
 set -o pipefail
 
@@ -19,6 +20,16 @@ build_package_svn()
 		upgradepkg --install-new --reinstall "$1/$1-*-*-*.t[gx]z" | tee -a "$SBLOG" || return 1
 		mv $1/$1-*-*-*.t[gx]z "$SBPKGDIR" || return 1
 	fi
+}
+
+build_theme_svn()
+{
+	echo -e "\n=== Start building $1 ($(date +%T)) ===\n" | tee -a "$SBLOG"
+	cd themes || return 1
+	"./$1-svn.build" || { echo "*** Error: failed to build $1" | tee -a "$SBLOG"; return 1; }
+	echo "Finished building $1 ($(date +%T))" | tee -a "$SBLOG"
+	mv *.edj "$SBTHMDIR" || return 1
+	cd "$SBDIR" || return 1
 }
 
 prompt_exit()
@@ -49,8 +60,16 @@ try_build_pkg_svn()
 	done
 }
 
+try_build_thm_svn()
+{
+	# ignore errors as themes are not really important
+	local res
+	build_theme_svn "$@" || cd "$SBDIR"
+}
+
 echo "[ E17 BUILD START $(date +%T) ]" | tee -a "$SBLOG" || exit 1
 mkdir -p "$SBPKGDIR"
+mkdir -p "$SBTHMDIR"
 
 # EFL
 try_build_pkg_svn  eina
@@ -103,9 +122,10 @@ try_build_pkg_svn  e_modules-eweather
 # wlan
 
 # Themes
-cd themes
-. themes-svn.build
-cd -
+try_build_thm_svn  23oz
+try_build_thm_svn  darkness
+try_build_thm_svn  detourious
+try_build_thm_svn  efenniht
 
 # Update dependencies graph
 cd "$SBDIR"
