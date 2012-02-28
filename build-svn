@@ -5,7 +5,7 @@ SBPKGDIR="$SBDIR/+packages-svn-$(date +%F)"
 SBLOG="$SBDIR/build-svn-$(date +%F).log"
 set -o pipefail
 
-build_svn()
+build_package_svn()
 {
 	echo -e "\n=== Start building $1 ($(date +%T)) ===\n" | tee -a "$SBLOG"
 	cd "$1" || return 1 
@@ -37,10 +37,10 @@ prompt_exit()
 	return $res
 }
 
-try_build_svn()
+try_build_pkg_svn()
 {
 	while true; do
-		build_svn "$@"
+		build_package_svn "$@"
 		if [[ $? == 0 ]]; then
 			break
 		else
@@ -53,53 +53,53 @@ echo "[ E17 BUILD START $(date +%T) ]" | tee -a "$SBLOG" || exit 1
 mkdir -p "$SBPKGDIR"
 
 # EFL
-try_build_svn  eina
-try_build_svn  eet
-try_build_svn  evas
-try_build_svn  evas_generic_loaders
-try_build_svn  ecore
-try_build_svn  embryo
-try_build_svn  edje
-try_build_svn  e_dbus
-try_build_svn  efreet
-try_build_svn  eeze
+try_build_pkg_svn  eina
+try_build_pkg_svn  eet
+try_build_pkg_svn  evas
+try_build_pkg_svn  evas_generic_loaders
+try_build_pkg_svn  ecore
+try_build_pkg_svn  embryo
+try_build_pkg_svn  edje
+try_build_pkg_svn  e_dbus
+try_build_pkg_svn  efreet
+try_build_pkg_svn  eeze
 
 # Misc. libs and apps
-try_build_svn  eio
+try_build_pkg_svn  eio
 # PROTO/
-try_build_svn  azy
-try_build_svn  epdf
-# try_build_svn  eyesight
-try_build_svn  libeweather
-try_build_svn  emap
-try_build_svn  esskyuehl
-try_build_svn  eupnp
-try_build_svn  emotion
-try_build_svn  emprint
-try_build_svn  ethumb
-try_build_svn  elementary
-try_build_svn  ekbd
-try_build_svn  elsa
-try_build_svn  ecrire
-try_build_svn  ephoto
-try_build_svn  envision
-try_build_svn  exalt
-try_build_svn  enjoy
-try_build_svn  equate
+try_build_pkg_svn  azy
+try_build_pkg_svn  epdf
+# try_build_pkg_svn  eyesight
+try_build_pkg_svn  libeweather
+try_build_pkg_svn  emap
+try_build_pkg_svn  esskyuehl
+try_build_pkg_svn  eupnp
+try_build_pkg_svn  emotion
+try_build_pkg_svn  emprint
+try_build_pkg_svn  ethumb
+try_build_pkg_svn  elementary
+try_build_pkg_svn  ekbd
+try_build_pkg_svn  elsa
+try_build_pkg_svn  ecrire
+try_build_pkg_svn  ephoto
+try_build_pkg_svn  envision
+try_build_pkg_svn  exalt
+try_build_pkg_svn  enjoy
+try_build_pkg_svn  equate
 
 # Enlightenment
-try_build_svn  enlightenment
-try_build_svn  e_modules-comp-scale
-try_build_svn  e_modules-screenshot
-try_build_svn  e_modules-taskbar
-try_build_svn  e_modules-e-tiling
-try_build_svn  e_modules-engage
-try_build_svn  e_modules-exalt-client
-try_build_svn  e_modules-eweather
-# try_build_svn  e_modules-eenvader.fractal
-# try_build_svn  e_modules-mpdule
-# try_build_svn  e_modules-calendar
-# try_build_svn  e_modules-weather
+try_build_pkg_svn  enlightenment
+try_build_pkg_svn  e_modules-comp-scale
+try_build_pkg_svn  e_modules-screenshot
+try_build_pkg_svn  e_modules-taskbar
+try_build_pkg_svn  e_modules-e-tiling
+try_build_pkg_svn  e_modules-engage
+try_build_pkg_svn  e_modules-exalt-client
+try_build_pkg_svn  e_modules-eweather
+# try_build_pkg_svn  e_modules-eenvader.fractal
+# try_build_pkg_svn  e_modules-mpdule
+# try_build_pkg_svn  e_modules-calendar
+# try_build_pkg_svn  e_modules-weather
 # wlan
 
 # Themes

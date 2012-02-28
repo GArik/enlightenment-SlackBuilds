@@ -5,7 +5,7 @@ SBPKGDIR="$SBDIR/+packages-stable-$(date +%F)"
 SBLOG="$SBDIR/build-stable-$(date +%F).log"
 set -o pipefail
 
-build()
+build_package()
 {
 	echo -e "\n=== Start building $1 ($(date +%T)) ===\n" | tee -a "$SBLOG"
 	cd "$1" || return 1
@@ -37,10 +37,10 @@ prompt_exit()
 	return $res
 }
 
-try_build()
+try_build_pkg()
 {
 	while true; do
-		build "$@"
+		build_package "$@"
 		if [[ $? == 0 ]]; then
 			break
 		else
@@ -53,16 +53,16 @@ echo "[ E17 BUILD START $(date +%T) ]" | tee -a "$SBLOG" || exit 1
 mkdir -p "$SBPKGDIR"
 
 # EFL
-try_build  eina
-try_build  eet
-try_build  evas
-try_build  evas_generic_loaders
-try_build  ecore
-try_build  embryo
-try_build  edje
-try_build  efreet
-try_build  e_dbus
-try_build  eeze
+try_build_pkg  eina
+try_build_pkg  eet
+try_build_pkg  evas
+try_build_pkg  evas_generic_loaders
+try_build_pkg  ecore
+try_build_pkg  embryo
+try_build_pkg  edje
+try_build_pkg  efreet
+try_build_pkg  e_dbus
+try_build_pkg  eeze
 
 # Misc. libs and apps
-try_build  expedite
+try_build_pkg  expedite
