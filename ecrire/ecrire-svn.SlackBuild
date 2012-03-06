@@ -62,17 +62,18 @@ cd $TMP/$NAME || exit 1
 chown -R root:root .
 find . -perm /111 -exec chmod 755 '{}' \; -o -exec chmod 644 '{}' \;
 
-NOCONFIGURE=1 \
-./autogen.sh
-CFLAGS="$SLKCFLAGS" \
-CPPFLAGS="$SLKCFLAGS" \
-./configure --prefix=/usr \
- --libdir=/usr/lib${LIBDIRSUFFIX} \
- --mandir=/usr/man \
- --infodir=/usr/info \
- --build=$CHOST-slackware-linux || exit 1
+mkdir build
+cd build || exit 1
+cmake \
+  -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
+  -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=/usr \
+  -DMAN_DIR=man \
+  .. || exit 1
 make -j2 || make || exit 1
 make install DESTDIR=$PKG || exit 1
+cd -
 
 mkdir -p $PKG/usr/doc/$NAME-$VERSION
 cp -a AUTHORS COPYING README TODO \
