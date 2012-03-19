@@ -14,7 +14,7 @@ Script will build and then install every package. Packages will be available
 in the +packages-svn-$(date +%F)/ directory; themes will be available in the
 +themes-svn-$(date +%F)/ directory (you need to manualy install them).
 It also computes pretty dependencies graph which you can view with dotty(1)
-or kgraphviewer (you will need requiredbuilder [3] and graphviz [4]).
+or kgraphviewer [3] (you will need requiredbuilder [4] and graphviz [5]).
 
 There are also SlackBuilds for stable versions of the e17 packages and the
 script called 'build-stable' that works in the same manner as 'build-svn'.
@@ -33,5 +33,6 @@ This will build the package for you. You can then upgrade/install it with
 
 [1] http://enlightenment.org
 [2] http://slackware.com
-[3] http://www.stabellini.net/requiredbuilder.html
-[4] http://graphviz.org
+[3] http://www.kde.org/applications/graphics/kgraphviewer/
+[4] http://www.stabellini.net/requiredbuilder.html
+[5] http://graphviz.org
