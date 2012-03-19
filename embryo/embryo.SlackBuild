@@ -29,10 +29,7 @@ elif [ "$ARCH" = "s390" ]; then
   SLKCFLAGS="-O2"
   CHOST=s390
 elif [ "$ARCH" = "arm" ]; then
-  SLKCFLAGS="-O2 -march=armv4 -mtune=xscale"
-  CHOST=arm
-elif [ "$ARCH" = "armel" ]; then
-  SLKCFLAGS="-O2 -march=armv4t"
+  SLKCFLAGS="-O2 -march=armv5te"
   CHOST=arm
 elif [ "$ARCH" = "native" ]; then
   SLKCFLAGS="-O3 -march=native -mtune=native -pipe"
