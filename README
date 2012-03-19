@@ -12,8 +12,9 @@ Or if you have Slackware64, you should run it this way:
 
 Script will build and then install every package. Packages will be available
 in the +packages-svn-$(date +%F)/ directory; themes will be available in the
-themes/. It also computes pretty dependencies graph which you can view with
-dotty(1) or kgraphviewer (you will need requiredbuilder [3] and graphviz [4]).
++themes-svn-$(date +%F)/ directory (you need to manualy install them).
+It also computes pretty dependencies graph which you can view with dotty(1)
+or kgraphviewer (you will need requiredbuilder [3] and graphviz [4]).
 
 There are also SlackBuilds for stable versions of the e17 packages and the
 script called 'build-stable' that works in the same manner as 'build-svn'.
