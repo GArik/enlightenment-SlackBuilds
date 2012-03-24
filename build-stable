@@ -63,6 +63,7 @@ try_build_pkg  edje
 try_build_pkg  efreet
 try_build_pkg  e_dbus
 try_build_pkg  eeze
+try_build_pkg  eio
 
 # Misc. libs and apps
 try_build_pkg  expedite
