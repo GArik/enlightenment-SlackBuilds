@@ -65,6 +65,7 @@ try_build_pkg  e_dbus
 try_build_pkg  eeze
 try_build_pkg  eio
 try_build_pkg  emotion
+try_build_pkg  ethumb
 
 # Misc. libs and apps
 try_build_pkg  expedite
