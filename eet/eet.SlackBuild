@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=eet
-VERSION=1.6.0-alpha
+VERSION=1.6.0-beta
 ARCH=${ARCH:-i686}
 BUILD=1ga
 CWD=`pwd`

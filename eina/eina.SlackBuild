@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=eina
-VERSION=1.2.0-alpha
+VERSION=1.2.0-beta
 ARCH=${ARCH:-i686}
 BUILD=1ga
 CWD=`pwd`
