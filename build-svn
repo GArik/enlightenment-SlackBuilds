@@ -9,7 +9,7 @@ set -o pipefail
 build_package_svn()
 {
 	echo -e "\n=== Start building $1 ($(date +%T)) ===\n" | tee -a "$SBLOG"
-	cd "$1" || return 1 
+	cd "$1" || return 1
 	"./$1-svn.SlackBuild" || { echo "*** Error: failed to build $1" | tee -a "$SBLOG"; return 1; }
 	echo "Finished building $1 ($(date +%T))" | tee -a "$SBLOG"
 	cd "$SBDIR" || return 1
@@ -79,13 +79,13 @@ try_build_pkg_svn  evas_generic_loaders
 try_build_pkg_svn  ecore
 try_build_pkg_svn  embryo
 try_build_pkg_svn  edje
-try_build_pkg_svn  e_dbus
 try_build_pkg_svn  efreet
+try_build_pkg_svn  e_dbus
 try_build_pkg_svn  eeze
-
-# Misc. libs and apps
 try_build_pkg_svn  eio
-# PROTO/
+try_build_pkg_svn  emotion
+
+# Misc. libs
 try_build_pkg_svn  azy
 try_build_pkg_svn  epdf
 # try_build_pkg_svn  eyesight
@@ -93,10 +93,11 @@ try_build_pkg_svn  libeweather
 try_build_pkg_svn  emap
 try_build_pkg_svn  esskyuehl
 try_build_pkg_svn  eupnp
-try_build_pkg_svn  emotion
 try_build_pkg_svn  emprint
 try_build_pkg_svn  ethumb
 try_build_pkg_svn  elementary
+
+# Apps
 try_build_pkg_svn  ekbd
 try_build_pkg_svn  elsa
 try_build_pkg_svn  ecrire
