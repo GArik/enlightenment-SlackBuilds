@@ -112,7 +112,6 @@ try_build_pkg_svn  enlightenment
 try_build_pkg_svn  e_modules-comp-scale
 try_build_pkg_svn  e_modules-screenshot
 try_build_pkg_svn  e_modules-taskbar
-try_build_pkg_svn  e_modules-e-tiling
 try_build_pkg_svn  e_modules-engage
 try_build_pkg_svn  e_modules-exalt-client
 try_build_pkg_svn  e_modules-eweather
