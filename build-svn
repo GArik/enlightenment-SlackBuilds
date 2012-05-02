@@ -116,7 +116,6 @@ try_build_pkg_svn  e_modules-e-tiling
 try_build_pkg_svn  e_modules-engage
 try_build_pkg_svn  e_modules-exalt-client
 try_build_pkg_svn  e_modules-eweather
-try_build_pkg_svn  e_modules-xkbswitch
 # try_build_pkg_svn  e_modules-eenvader.fractal
 # try_build_pkg_svn  e_modules-mpdule
 # try_build_pkg_svn  e_modules-calendar
