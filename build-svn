@@ -110,6 +110,7 @@ try_build_pkg_svn  equate
 # Enlightenment
 try_build_pkg_svn  enlightenment
 try_build_pkg_svn  e_modules-comp-scale
+try_build_pkg_svn  e_modules-net
 try_build_pkg_svn  e_modules-screenshot
 try_build_pkg_svn  e_modules-taskbar
 try_build_pkg_svn  e_modules-engage
