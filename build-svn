@@ -99,7 +99,7 @@ try_build_pkg_svn  elementary
 
 # Apps
 try_build_pkg_svn  ekbd
-try_build_pkg_svn  elsa
+try_build_pkg_svn  entrance
 try_build_pkg_svn  ecrire
 try_build_pkg_svn  ephoto
 try_build_pkg_svn  envision

@@ -5,15 +5,15 @@
 # exactly 11 lines for the formatting to be correct.  It's also customary to
 # leave one space after the ':'.
 
-    |-----handy-ruler------------------------------------------------------|
-elsa: Elsa
-elsa: 
-elsa: Elsa is a login manager.
-elsa: 
-elsa: 
-elsa:              http://www.enlightenment.org
-elsa: 
-elsa: 
-elsa: 
-elsa: 
-elsa: 
+        |-----handy-ruler------------------------------------------------------|
+entrance: Entrance
+entrance: 
+entrance: Entrance is a login manager.
+entrance: 
+entrance: 
+entrance:              http://www.enlightenment.org
+entrance: 
+entrance: 
+entrance: 
+entrance: 
+entrance: 
