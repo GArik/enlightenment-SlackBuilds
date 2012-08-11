@@ -59,11 +59,11 @@ try_build_pkg  evas
 try_build_pkg  evas_generic_loaders
 try_build_pkg  ecore
 try_build_pkg  embryo
+try_build_pkg  eio
 try_build_pkg  edje
 try_build_pkg  efreet
 try_build_pkg  e_dbus
 try_build_pkg  eeze
-try_build_pkg  eio
 try_build_pkg  emotion
 try_build_pkg  ethumb
 try_build_pkg  elementary
