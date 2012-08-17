@@ -87,6 +87,7 @@ try_build_pkg_svn  emotion
 
 # Misc. libs
 try_build_pkg_svn  azy
+try_build_pkg_svn  efx
 try_build_pkg_svn  epdf
 # try_build_pkg_svn  eyesight
 try_build_pkg_svn  libeweather
