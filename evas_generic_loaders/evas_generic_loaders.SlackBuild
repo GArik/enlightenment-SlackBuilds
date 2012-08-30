@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=evas_generic_loaders
-VERSION=1.2.0
+VERSION=1.7.0
 ARCH=${ARCH:-i686}
 BUILD=1ga
 CWD=`pwd`
