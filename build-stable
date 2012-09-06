@@ -71,3 +71,4 @@ try_build_pkg  elementary
 # Misc. libs and apps
 try_build_pkg  expedite
 try_build_pkg  terminology
+# try_build_pkg  eperiodique
