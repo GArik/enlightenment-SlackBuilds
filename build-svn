@@ -98,6 +98,7 @@ try_build_pkg_svn  emprint
 try_build_pkg_svn  ethumb
 try_build_pkg_svn  ephysics
 try_build_pkg_svn  elementary
+try_build_pkg_svn  geneet
 
 # Apps
 try_build_pkg_svn  ekbd
