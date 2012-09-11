@@ -115,6 +115,7 @@ try_build_pkg_svn  terminology
 # Games
 # try_build_pkg_svn  etrophy
 # try_build_pkg_svn  efbb
+# try_build_pkg_svn  econcentration
 
 # Enlightenment
 try_build_pkg_svn  enlightenment
