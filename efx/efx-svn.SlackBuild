@@ -8,7 +8,7 @@ CWD=`pwd`
 TMP=${TMP:-/tmp/tgz/e17}
 PKG=$TMP/package-$NAME
 
-SOURCE=http://svn.enlightenment.org/svn/e/trunk/PROTO/$NAME
+SOURCE=http://svn.enlightenment.org/svn/e/trunk/$NAME
 
 
 if [ "$ARCH" = "i486" ]; then
