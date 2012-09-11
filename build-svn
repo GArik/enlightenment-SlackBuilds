@@ -112,6 +112,9 @@ try_build_pkg_svn  equate
 # try_build_pkg_svn  shotgun
 try_build_pkg_svn  terminology
 
+# Games
+# try_build_pkg_svn  etrophy
+
 # Enlightenment
 try_build_pkg_svn  enlightenment
 try_build_pkg_svn  e_modules-comp-scale
