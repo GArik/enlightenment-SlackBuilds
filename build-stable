@@ -68,7 +68,10 @@ try_build_pkg  emotion
 try_build_pkg  ethumb
 try_build_pkg  elementary
 
-# Misc. libs and apps
+# Apps
 try_build_pkg  expedite
 try_build_pkg  terminology
 # try_build_pkg  eperiodique
+
+# Games
+# try_build_pkg  elemines
