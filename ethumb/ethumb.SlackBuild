@@ -74,7 +74,7 @@ make -j2 || make || exit 1
 make install DESTDIR=$PKG || exit 1
 
 mkdir -p $PKG/usr/doc/$NAME-$VERSION
-cp -a AUTHORS COPYING README \
+cp -a AUTHORS COPYING NEWS README TODO \
   $PKG/usr/doc/$NAME-$VERSION
 
 cd $PKG
