@@ -6,10 +6,6 @@ Like this:
 
   # ./build-svn
 
-Or if you have Slackware64, you should run it this way:
-
-  # ARCH=x86_64 ./build-svn
-
 Script will build and then install every package. Packages will be available
 in the +packages-svn-$(date +%F)/ directory; themes will be available in the
 +themes-svn-$(date +%F)/ directory (you need to manualy install them).

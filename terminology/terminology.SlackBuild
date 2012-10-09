@@ -3,7 +3,7 @@
 
 NAME=terminology
 VERSION=0.1.0
-ARCH=${ARCH:-i686}
+ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
 TMP=${TMP:-/tmp/tgz}

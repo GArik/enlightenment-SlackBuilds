@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=evas_generic_loaders
-ARCH=${ARCH:-i686}
+ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
 TMP=${TMP:-/tmp/tgz/e17}
