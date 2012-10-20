@@ -77,7 +77,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --mandir=/usr/man \
   --disable-static \
   --build=$CHOST-slackware-linux || exit 1
-make -j2 || make || exit 1
+make || exit 1
 make install DESTDIR=$PKG || exit 1
 
 mkdir -p $PKG/usr/doc/$NAME-$VERSION

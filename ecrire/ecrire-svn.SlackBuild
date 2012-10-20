@@ -74,7 +74,7 @@ cmake \
   -DCMAKE_INSTALL_PREFIX=/usr \
   -DMAN_DIR=man \
   .. || exit 1
-make -j2 || make || exit 1
+make || exit 1
 make install DESTDIR=$PKG || exit 1
 cd -
 

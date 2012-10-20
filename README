@@ -26,6 +26,13 @@ This will build the package for you. You can then upgrade/install it with
 
   # upgradepkg --install-new ephoto-*.txz
 
+By default all SlackBuilds run only one job to compile the source code. If you
+want make to run several jobs simultaneously, set MAKEFLAGS to "-j[N]" where N
+is a desired number of jobs. To get good CPU utilization run following:
+
+  # MAKEFLAGS="-j$(( $(getconf _NPROCESSORS_ONLN) + 1 ))" \
+    ./build-svn
+
 
 [1] http://enlightenment.org
 [2] http://slackware.com
