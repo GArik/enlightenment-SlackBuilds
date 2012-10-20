@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=edje
-VERSION=1.7.0
+VERSION=1.7.1
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
