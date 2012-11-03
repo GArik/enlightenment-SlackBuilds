@@ -81,8 +81,9 @@ try_build_pkg_svn  ecore
 try_build_pkg_svn  embryo
 try_build_pkg_svn  eio
 try_build_pkg_svn  edje
-try_build_pkg_svn  efreet
+try_build_pkg_svn  edbus
 try_build_pkg_svn  e_dbus
+try_build_pkg_svn  efreet
 try_build_pkg_svn  eeze
 try_build_pkg_svn  emotion
 
