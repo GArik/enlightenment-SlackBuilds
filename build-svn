@@ -110,6 +110,7 @@ try_build_pkg_svn  ephoto
 try_build_pkg_svn  envision
 try_build_pkg_svn  exalt
 try_build_pkg_svn  enjoy
+try_build_pkg_svn  empower
 try_build_pkg_svn  equate
 # try_build_pkg_svn  shotgun
 try_build_pkg_svn  terminology
