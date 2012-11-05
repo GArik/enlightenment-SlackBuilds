@@ -75,3 +75,6 @@ try_build_pkg  terminology
 
 # Games
 # try_build_pkg  elemines
+
+# Enlightenment
+try_build_pkg  enlightenment
