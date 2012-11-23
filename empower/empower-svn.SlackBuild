@@ -97,7 +97,6 @@ fi
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
-cat $CWD/doinst.sh > $PKG/install/doinst.sh
 cat $CWD/slack-desc > $PKG/usr/doc/$NAME-$VERSION/slack-desc
 cat $CWD/$NAME-svn.SlackBuild > $PKG/usr/doc/$NAME-$VERSION/$NAME-svn.SlackBuild
 
