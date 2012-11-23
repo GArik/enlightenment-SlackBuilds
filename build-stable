@@ -13,10 +13,10 @@ build_package()
 	echo "Finished building $1 ($(date +%T))" | tee -a "$SBLOG"
 	cd "$SBDIR" || return 1
 	if [[ $ARCH ]]; then
-		upgradepkg --install-new --reinstall "$1/$1-*-$ARCH-*.t[gx]z" | tee -a "$SBLOG" || return 1
+		upgradepkg --install-new --reinstall $1/$1-*-$ARCH-*.t[gx]z | tee -a "$SBLOG" || return 1
 		mv $1/$1-*-$ARCH-*.t[gx]z "$SBPKGDIR" || return 1
 	else
-		upgradepkg --install-new --reinstall "$1/$1-*-*-*.t[gx]z" | tee -a "$SBLOG" || return 1
+		upgradepkg --install-new --reinstall $1/$1-*-*-*.t[gx]z | tee -a "$SBLOG" || return 1
 		mv $1/$1-*-*-*.t[gx]z "$SBPKGDIR" || return 1
 	fi
 }
