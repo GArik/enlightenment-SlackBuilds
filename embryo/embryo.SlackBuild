@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=embryo
-VERSION=1.7.1
+VERSION=1.7.2
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
