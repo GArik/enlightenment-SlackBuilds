@@ -142,6 +142,7 @@ try_build_pkg_svn  e_modules-eenvader.fractal
 
 # Themes
 try_build_thm_svn  23oz
+try_build_thm_svn  b_and_w
 try_build_thm_svn  darkness
 try_build_thm_svn  detourious
 try_build_thm_svn  efenniht
