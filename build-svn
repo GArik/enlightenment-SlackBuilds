@@ -134,6 +134,8 @@ try_build_pkg_svn  e_modules-eweather
 try_build_pkg_svn  e_modules-everything-places
 try_build_pkg_svn  e_modules-everything-websearch
 try_build_pkg_svn  e_modules-eenvader.fractal
+# try_build_pkg_svn  e_modules-snow
+# try_build_pkg_svn  e_modules-penguins
 # try_build_pkg_svn  e_modules-photo
 # try_build_pkg_svn  e_modules-alarm
 # try_build_pkg_svn  e_modules-mpdule
