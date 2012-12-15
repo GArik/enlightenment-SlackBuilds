@@ -74,6 +74,7 @@ try_build_pkg  terminology
 # try_build_pkg  eperiodique
 
 # Games
+# try_build_pkg  etrophy
 # try_build_pkg  elemines
 
 # Enlightenment
