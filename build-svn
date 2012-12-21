@@ -123,6 +123,7 @@ try_build_pkg_svn  terminology
 # Enlightenment
 try_build_pkg_svn  enlightenment
 try_build_pkg_svn  e_modules-comp-scale
+try_build_pkg_svn  e_modules-forecasts
 try_build_pkg_svn  e_modules-net
 try_build_pkg_svn  e_modules-news
 try_build_pkg_svn  e_modules-places
