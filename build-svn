@@ -140,8 +140,6 @@ try_build_pkg_svn  e_modules-eenvader.fractal
 # try_build_pkg_svn  e_modules-photo
 # try_build_pkg_svn  e_modules-alarm
 # try_build_pkg_svn  e_modules-mpdule
-# try_build_pkg_svn  e_modules-weather
-# wlan
 
 # Themes
 try_build_thm_svn  23oz
