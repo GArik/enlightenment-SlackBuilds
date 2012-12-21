@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=ecore
-VERSION=1.7.3
+VERSION=1.7.4
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
