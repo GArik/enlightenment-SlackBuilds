@@ -2,7 +2,7 @@
 # http://elemines.sourceforge.net/
 
 NAME=elemines
-VERSION=0.1
+VERSION=0.2.1
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`

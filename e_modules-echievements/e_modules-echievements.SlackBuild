@@ -2,7 +2,7 @@
 # https://github.com/zmike/echievements
 
 NAME=e_modules-echievements
-VERSION=2
+VERSION=3
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
