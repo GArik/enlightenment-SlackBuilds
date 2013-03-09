@@ -74,14 +74,12 @@ mkdir -p "$SBTHMDIR"
 # EFL
 try_build_pkg_svn  eina
 try_build_pkg_svn  eet
-try_build_pkg_svn  eobj
 try_build_pkg_svn  evas
 try_build_pkg_svn  evas_generic_loaders
 try_build_pkg_svn  ecore
 try_build_pkg_svn  embryo
 try_build_pkg_svn  eio
 try_build_pkg_svn  edje
-try_build_pkg_svn  edbus
 try_build_pkg_svn  e_dbus
 try_build_pkg_svn  efreet
 try_build_pkg_svn  eeze
@@ -99,7 +97,6 @@ try_build_pkg_svn  eupnp
 try_build_pkg_svn  emprint
 try_build_pkg_svn  ethumb
 try_build_pkg_svn  elementary
-try_build_pkg_svn  ephysics
 try_build_pkg_svn  geneet
 
 # Apps
@@ -117,7 +114,6 @@ try_build_pkg_svn  terminology
 
 # Games
 # try_build_pkg_svn  etrophy
-# try_build_pkg_svn  efbb
 # try_build_pkg_svn  econcentration
 
 # Enlightenment
