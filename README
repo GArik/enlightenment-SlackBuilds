@@ -1,37 +1,33 @@
 This is a collection of SlackBuilds for building e17 [1] packages for
 Slackware GNU/Linux [2].
 
-You only need to run one single script 'build-svn' to build all the packages.
+You only need to run one single script 'build-e17' to build all the packages.
 Like this:
 
-  # ./build-svn
+  # ./build-e17
 
 Script will build and then install every package. Packages will be available
-in the +packages-svn-$(date +%F)/ directory; themes will be available in the
-+themes-svn-$(date +%F)/ directory (you need to manualy install them).
-It also computes pretty dependencies graph which you can view with dotty(1)
-or kgraphviewer [3] (you will need requiredbuilder [4] and graphviz [5]).
-
-There are also SlackBuilds for stable versions of the e17 packages and the
-script called 'build-stable' that works in the same manner as 'build-svn'.
+in the +packages-e17-$(date +%F)/ directory. It also computes pretty
+dependencies graph which you can view with dotty(1) or kgraphviewer [3]
+(you will need requiredbuilder [4] and graphviz [5]).
 
 Note that all SlackBuilds are completely independent from each other. So if
 you want to update only one component, you can do it easily. Let's assume you
-need fresh version of ephoto application. You build the package like this:
+need fresh version of terminology application. You build the package like this:
 
-  # cd ephoto
-  # ./ephoto-svn.SlackBuild
+  # cd terminology
+  # ./terminology.SlackBuild
 
 This will build the package for you. You can then upgrade/install it with
 
-  # upgradepkg --install-new ephoto-*.txz
+  # upgradepkg --install-new terminology-*.txz
 
 By default all SlackBuilds run only one job to compile the source code. If you
 want make to run several jobs simultaneously, set MAKEFLAGS to "-j[N]" where N
 is a desired number of jobs. To get good CPU utilization run following:
 
   # MAKEFLAGS="-j$(( $(getconf _NPROCESSORS_ONLN) + 1 ))" \
-    ./build-svn
+    ./build-e17
 
 
 [1] http://enlightenment.org

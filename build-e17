@@ -1,8 +1,8 @@
 #!/bin/bash
 
 SBDIR=$(pwd)
-SBPKGDIR="$SBDIR/+packages-stable-$(date +%F)"
-SBLOG="$SBDIR/build-stable-$(date +%F).log"
+SBPKGDIR="$SBDIR/+packages-e17-$(date +%F)"
+SBLOG="$SBDIR/build-e17-$(date +%F).log"
 set -o pipefail
 
 build_package()
@@ -79,3 +79,8 @@ try_build_pkg  terminology
 
 # Enlightenment
 try_build_pkg  enlightenment
+# try_build_pkg  e_modules-echievements
+
+# Update dependencies graph
+cd "$SBDIR"
+./depgraph > e17-depgraph.dot
