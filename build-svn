@@ -146,4 +146,4 @@ try_build_thm_svn  efenniht
 
 # Update dependencies graph
 cd "$SBDIR"
-./depgraph
+./depgraph > e17-depgraph.dot

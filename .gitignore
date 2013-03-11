@@ -6,3 +6,4 @@
 *.t[gblx]z
 *.edj
 slack-required
+/depgraph-full.dot
