@@ -66,8 +66,4 @@ cat $CWD/$NAME-svn.SlackBuild > $PKG/usr/doc/$NAME-$VERSION/$NAME-svn.SlackBuild
 
 ADD="pyparsing, python" \
 requiredbuilder -v -y -s $CWD $PKG
-if [ -x /bin/xz ]; then
- makepkg -l y -c n $CWD/$NAME-$VERSION-$ARCH-$BUILD.txz
-else
- makepkg -l y -c n $CWD/$NAME-$VERSION-$ARCH-$BUILD.tgz
-fi
+makepkg -l y -c n $CWD/$NAME-$VERSION-$ARCH-$BUILD.txz

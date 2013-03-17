@@ -97,8 +97,4 @@ cat $CWD/$NAME.SlackBuild > $PKG/usr/doc/$NAME-$VERSION/$NAME.SlackBuild
 
 ADD="enlightenment" \
 requiredbuilder -v -y -s $CWD $PKG
-if [ -x /bin/xz ]; then
- makepkg -l y -c n $CWD/$NAME-${VERSION//-/_}-$ARCH-$BUILD.txz
-else
- makepkg -l y -c n $CWD/$NAME-${VERSION//-/_}-$ARCH-$BUILD.tgz
-fi
+makepkg -l y -c n $CWD/$NAME-${VERSION//-/_}-$ARCH-$BUILD.txz
