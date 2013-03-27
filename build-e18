@@ -1,0 +1,87 @@
+#!/bin/bash
+
+SBDIR=$(pwd)
+SBPKGDIR="$SBDIR/+packages-git-$(date +%F)"
+SBTHMDIR="$SBDIR/+themes-git-$(date +%F)"
+SBLOG="$SBDIR/build-git-$(date +%F).log"
+set -o pipefail
+
+build_package_git()
+{
+	echo -e "\n=== Start building $1 ($(date +%T)) ===\n" | tee -a "$SBLOG"
+	cd "$1" || return 1
+	"./$1-git.SlackBuild" || { echo "*** Error: failed to build $1" | tee -a "$SBLOG"; return 1; }
+	echo "Finished building $1 ($(date +%T))" | tee -a "$SBLOG"
+	cd "$SBDIR" || return 1
+	if [[ $ARCH ]]; then
+		upgradepkg --install-new --reinstall $1/$1-*-$ARCH-*.txz | tee -a "$SBLOG" || return 1
+		mv $1/$1-*-$ARCH-*.txz "$SBPKGDIR" || return 1
+	else
+		upgradepkg --install-new --reinstall $1/$1-*-*-*.txz | tee -a "$SBLOG" || return 1
+		mv $1/$1-*-*-*.txz "$SBPKGDIR" || return 1
+	fi
+}
+
+build_theme_git()
+{
+	echo -e "\n=== Start building $1 ($(date +%T)) ===\n" | tee -a "$SBLOG"
+	cd themes || return 1
+	"./$1-git.build" || { echo "*** Error: failed to build $1" | tee -a "$SBLOG"; return 1; }
+	echo "Finished building $1 ($(date +%T))" | tee -a "$SBLOG"
+	mv *.edj "$SBTHMDIR" || return 1
+	cd "$SBDIR" || return 1
+}
+
+prompt_exit()
+{
+	local res
+	read -p "Retry, skip, exit? [r,S,e] " SBANS
+	if [[ "$SBANS" == [eE] ]]; then
+		exit 1
+	elif [[ "$SBANS" == [rR] ]]; then
+		res=0
+	else
+		echo -e "\n*** Skip building $1 ***\n" | tee -a "$SBLOG"
+		res=1
+	fi
+	cd "$SBDIR" || return 1
+	return $res
+}
+
+try_build_pkg_git()
+{
+	while true; do
+		build_package_git "$@"
+		if [[ $? == 0 ]]; then
+			break
+		else
+			prompt_exit "$1" || break
+		fi
+	done
+}
+
+try_build_thm_git()
+{
+	# ignore errors as themes are not really important
+	local res
+	build_theme_git "$@" || cd "$SBDIR"
+}
+
+echo "[ E17 BUILD START $(date +%T) ]" | tee -a "$SBLOG" || exit 1
+mkdir -p "$SBPKGDIR"
+mkdir -p "$SBTHMDIR"
+
+# EFL
+try_build_pkg_git  efl
+try_build_pkg_git  evas_generic_loaders
+try_build_pkg_git  elementary
+
+# Misc. libs and tools
+try_build_pkg_git  geneet
+
+# Enlightenment
+try_build_pkg_git  enlightenment
+
+# Update dependencies graph
+cd "$SBDIR"
+./depgraph > e18-depgraph.dot

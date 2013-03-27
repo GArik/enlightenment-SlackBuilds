@@ -1,22 +1,26 @@
-This is a collection of SlackBuilds for building e17 [1] packages for
+This is a collection of SlackBuilds for building enlightenment [1] packages for
 Slackware GNU/Linux [2].
 
-You only need to run one single script 'build-e17' to build all the packages.
+You only need to run one single script 'build-e18' to build all the packages.
 Like this:
 
-  # ./build-e17
+  # ./build-e18
 
 Script will build and then install every package. Packages will be available
-in the +packages-e17-$(date +%F)/ directory. It also computes pretty
-dependencies graph which you can view with dotty(1) or kgraphviewer [3]
-(you will need requiredbuilder [4] and graphviz [5]).
+in the +packages-git-$(date +%F)/ directory; themes will be available in the
++themes-git-$(date +%F)/ directory (you need to manualy install them).
+It also computes pretty dependencies graph which you can view with dotty(1)
+or kgraphviewer [3] (you will need requiredbuilder [4] and graphviz [5]).
+
+There are also SlackBuilds for stable versions of the e17 packages and the
+script called 'build-e17' that works in the same manner as 'build-e18'.
 
 Note that all SlackBuilds are completely independent from each other. So if
 you want to update only one component, you can do it easily. Let's assume you
 need fresh version of terminology application. You build the package like this:
 
   # cd terminology
-  # ./terminology.SlackBuild
+  # ./terminology-git.SlackBuild
 
 This will build the package for you. You can then upgrade/install it with
 
@@ -27,7 +31,7 @@ want make to run several jobs simultaneously, set MAKEFLAGS to "-j[N]" where N
 is a desired number of jobs. To get good CPU utilization run following:
 
   # MAKEFLAGS="-j$(( $(getconf _NPROCESSORS_ONLN) + 1 ))" \
-    ./build-e17
+    ./build-e18
 
 
 [1] http://enlightenment.org
