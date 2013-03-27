@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=expedite
-VERSION=1.7.5
+VERSION=1.7.6
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
