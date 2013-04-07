@@ -1,15 +1,15 @@
 #!/bin/sh
 # http://www.enlightenment.org/
 
-NAME=ephoto
+NAME=ecrire
+VERSION=$(date +%Y%m%d)
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
-TMP=${TMP:-/tmp/tgz/e17}
+TMP=${TMP:-/tmp/tgz/e-git}
 PKG=$TMP/package-$NAME
 
-SOURCE=http://svn.enlightenment.org/svn/e/trunk/$NAME
-
+SOURCE=git://git.enlightenment.org/apps/$NAME.git
 
 if [ "$ARCH" = "i486" ]; then
   SLKCFLAGS="-O2 -march=i486 -mtune=i686"
@@ -38,23 +38,19 @@ else
 fi
 
 if [ ! -d $TMP ]; then
- mkdir -p $TMP
+  mkdir -p $TMP
 fi
 if [ ! -d $PKG ]; then
- mkdir -p $PKG
+  mkdir -p $PKG
 fi
 
 # getting source codes
 if [ ! -d $TMP/$NAME ]; then
-  svn checkout $SOURCE $TMP/$NAME || exit 1
+  git clone $SOURCE $TMP/$NAME || exit 1
 else
-  cd $TMP/$NAME || exit 1
-  svn up --accept theirs-conflict || exit 1
+  cd $TMP/$NAME
+  git pull --ff-only || exit 1
 fi
-
-# get version from svn
-VERSION=`svn -q -r COMMITTED log $TMP/$NAME | grep -o '^r[0-9]\+'`
-VERSION=${VERSION:-`date +%Y%m%d`}
 
 echo -e "\E[0;32m+----------------------------------+\E[0;0m"
 echo -e "\E[0;32m| Start SlackBuild $NAME-$VERSION |\E[0;0m"
@@ -65,22 +61,21 @@ cd $TMP/$NAME || exit 1
 chown -R root:root .
 find . -perm /111 -exec chmod 755 '{}' \; -o -exec chmod 644 '{}' \;
 
-NOCONFIGURE=1 \
-./autogen.sh
-CFLAGS="$SLKCFLAGS" \
-CXXFLAGS="$SLKCFLAGS" \
-./configure --prefix=/usr \
- --libdir=/usr/lib${LIBDIRSUFFIX} \
- --mandir=/usr/man \
- --infodir=/usr/info \
- --enable-shared \
- --disable-static \
- --build=$CHOST-slackware-linux || exit 1
+mkdir build
+cd build || exit 1
+cmake \
+  -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
+  -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=/usr \
+  -DMAN_DIR=man \
+  .. || exit 1
 make || exit 1
 make install DESTDIR=$PKG || exit 1
+cd -
 
 mkdir -p $PKG/usr/doc/$NAME-$VERSION
-cp -a AUTHORS COPYING NEWS README TODO \
+cp -a AUTHORS COPYING README TODO \
   $PKG/usr/doc/$NAME-$VERSION
 
 cd $PKG
@@ -89,17 +84,17 @@ find . | xargs file | grep "shared object" | grep ELF | cut -f 1 -d : | xargs st
 find . | xargs file | grep "current ar archive" | cut -f 1 -d : | xargs strip -g 2> /dev/null
 
 if [ -d $PKG/usr/man ]; then
- find $PKG/usr/man -type f -exec gzip -9 {} \;
+  find $PKG/usr/man -type f -exec gzip -9 {} \;
 fi
 if [ -d $PKG/usr/info ]; then
- rm $PKG/usr/info/dir
- find $PKG/usr/info -type f -exec gzip -9 {} \;
+  rm $PKG/usr/info/dir
+  find $PKG/usr/info -type f -exec gzip -9 {} \;
 fi
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/slack-desc > $PKG/usr/doc/$NAME-$VERSION/slack-desc
-cat $CWD/$NAME-svn.SlackBuild > $PKG/usr/doc/$NAME-$VERSION/$NAME-svn.SlackBuild
+cat $CWD/$NAME-git.SlackBuild > $PKG/usr/doc/$NAME-$VERSION/$NAME-git.SlackBuild
 
 requiredbuilder -v -y -s $CWD $PKG
 makepkg -l y -c n $CWD/$NAME-$VERSION-$ARCH-$BUILD.txz

@@ -79,6 +79,13 @@ try_build_pkg_git  elementary
 # Misc. libs and tools
 try_build_pkg_git  geneet
 
+# Apps
+try_build_pkg_git  ecrire
+try_build_pkg_git  enjoy
+try_build_pkg_git  entrance
+try_build_pkg_git  ephoto
+try_build_pkg_git  terminology
+
 # Enlightenment
 try_build_pkg_git  enlightenment
 
