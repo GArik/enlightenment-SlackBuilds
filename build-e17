@@ -66,6 +66,7 @@ try_build_pkg  e_dbus
 try_build_pkg  eeze
 try_build_pkg  emotion
 try_build_pkg  ethumb
+try_build_pkg  webkit-efl
 try_build_pkg  elementary
 
 # Apps

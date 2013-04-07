@@ -1,0 +1,11 @@
+--- Source/WebKit/PlatformEfl.cmake	2012-08-30 22:44:46.000000000 +0400
++++ Source/WebKit/PlatformEfl.cmake	2013-04-07 20:09:02.508111647 +0400
+@@ -251,7 +251,7 @@
+     ${CMAKE_BINARY_DIR}/WebKit/efl/ewebkit.pc
+     @ONLY)
+ INSTALL(FILES ${CMAKE_BINARY_DIR}/WebKit/efl/ewebkit.pc
+-    DESTINATION lib/pkgconfig)
++    DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
+ 
+ UNSET(LIBS_PRIVATE)
+ 

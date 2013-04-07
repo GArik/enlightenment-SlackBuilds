@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+          |-----handy-ruler------------------------------------------------------|
+webkit-efl: EWebKit
+webkit-efl: 
+webkit-efl: WebKit-EFL is the port of WebKit to EFL.  In order to keep it general
+webkit-efl: and as independent as possible it uses (directly) a small subset of
+webkit-efl: EFL libraries: Evas, Ecore and Edje.
+webkit-efl: WebKit is an open source web browser engine.  WebKit's HTML and
+webkit-efl: JavaScript code began as a branch of the KHTML and KJS libraries
+webkit-efl: from KDE.
+webkit-efl: 
+webkit-efl: 
+webkit-efl:                  http://www.webkit.org/
