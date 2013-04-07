@@ -86,6 +86,12 @@ try_build_pkg_git  entrance
 try_build_pkg_git  ephoto
 try_build_pkg_git  terminology
 
+# Games
+try_build_pkg_git  etrophy
+try_build_pkg_git  econcentration
+try_build_pkg_git  efbb
+try_build_pkg_git  elemines
+
 # Enlightenment
 try_build_pkg_git  enlightenment
 
