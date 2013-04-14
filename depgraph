@@ -10,7 +10,7 @@ for i in `ls */slack-required`; do
   echo "\"$name\" [shape=box];" >> "$SBFULLDEP"
   sed -e "s|^\([^ ]*\) *.*$|\"$name\" -> \"\1\";|g" $i >> "$SBFULLDEP"
 done
-echo 'label="Dependencies graph for e17"' >> "$SBFULLDEP"
+echo 'label="Dependencies graph for Enlightenment"' >> "$SBFULLDEP"
 echo "}" >> "$SBFULLDEP"
 
 # reduce number of edges to make graph understandable
