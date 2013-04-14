@@ -94,6 +94,7 @@ try_build_pkg_git  elemines
 
 # Enlightenment
 try_build_pkg_git  enlightenment
+try_build_pkg_git  e_modules-productivity
 
 # Update dependencies graph
 cd "$SBDIR"
