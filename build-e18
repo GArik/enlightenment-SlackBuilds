@@ -78,9 +78,12 @@ try_build_pkg_git  elementary
 
 # Misc. libs and tools
 try_build_pkg_git  geneet
+try_build_pkg_git  efx
+try_build_pkg_git  esskyuehl
 
 # Apps
 try_build_pkg_git  ecrire
+try_build_pkg_git  emprint
 try_build_pkg_git  enjoy
 try_build_pkg_git  entrance
 try_build_pkg_git  ephoto
