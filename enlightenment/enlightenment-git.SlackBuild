@@ -82,7 +82,7 @@ cp -a AUTHORS COPYING NEWS README \
 
 # handle the xinitrc file
 mkdir -p $PKG/etc/X11/xinit
-cat $CWD/xinitrc.enlightenment17 > $PKG/etc/X11/xinit/xinitrc.enlightenment17
+cat $CWD/xinitrc.enlightenment > $PKG/etc/X11/xinit/xinitrc.enlightenment18
 
 
 cd $PKG
