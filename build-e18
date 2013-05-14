@@ -67,7 +67,7 @@ try_build_thm_git()
 	build_theme_git "$@" || cd "$SBDIR"
 }
 
-echo "[ E17 BUILD START $(date +%T) ]" | tee -a "$SBLOG" || exit 1
+echo "[ E18 BUILD START $(date +%T) ]" | tee -a "$SBLOG" || exit 1
 mkdir -p "$SBPKGDIR"
 mkdir -p "$SBTHMDIR"
 

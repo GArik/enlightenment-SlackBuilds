@@ -14,6 +14,6 @@ geneet: generate the C source code so it can be serialized/deserialized
 geneet: by using the EET library.
 geneet: 
 geneet: 
-geneet:            http://www.enlightenment.org/
+geneet:            http://www.enlightenment.org
 geneet: 
 geneet: 
