@@ -87,6 +87,7 @@ try_build_pkg_git  emprint
 try_build_pkg_git  enjoy
 try_build_pkg_git  entrance
 try_build_pkg_git  ephoto
+try_build_pkg_git  maelstrom
 try_build_pkg_git  terminology
 
 # Games
