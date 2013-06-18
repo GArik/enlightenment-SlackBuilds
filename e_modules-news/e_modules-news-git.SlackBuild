@@ -1,15 +1,15 @@
 #!/bin/sh
 # http://www.enlightenment.org/
 
-NAME=e_modules-everything-places
+NAME=e_modules-news
+VERSION=$(date +%Y%m%d)
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
-TMP=${TMP:-/tmp/tgz/e17}
+TMP=${TMP:-/tmp/tgz/e-git}
 PKG=$TMP/package-$NAME
 
-SOURCE=http://svn.enlightenment.org/svn/e/trunk/E-MODULES-EXTRA/everything-places
-
+SOURCE=git://git.enlightenment.org/enlightenment/modules/news.git
 
 if [ "$ARCH" = "i486" ]; then
   SLKCFLAGS="-O2 -march=i486 -mtune=i686"
@@ -38,23 +38,19 @@ else
 fi
 
 if [ ! -d $TMP ]; then
- mkdir -p $TMP
+  mkdir -p $TMP
 fi
 if [ ! -d $PKG ]; then
- mkdir -p $PKG
+  mkdir -p $PKG
 fi
 
 # getting source codes
 if [ ! -d $TMP/$NAME ]; then
-  svn checkout $SOURCE $TMP/$NAME || exit 1
+  git clone $SOURCE $TMP/$NAME || exit 1
 else
-  cd $TMP/$NAME || exit 1
-  svn up --accept theirs-conflict || exit 1
+  cd $TMP/$NAME
+  git pull --ff-only || exit 1
 fi
-
-# get version from svn
-VERSION=`svn -q -r COMMITTED log $TMP/$NAME | grep -o '^r[0-9]\+'`
-VERSION=${VERSION:-`date +%Y%m%d`}
 
 echo -e "\E[0;32m+----------------------------------+\E[0;0m"
 echo -e "\E[0;32m| Start SlackBuild $NAME-$VERSION |\E[0;0m"
@@ -80,7 +76,7 @@ make || exit 1
 make install DESTDIR=$PKG || exit 1
 
 mkdir -p $PKG/usr/doc/$NAME-$VERSION
-cp -a AUTHORS COPYING* README \
+cp -a AUTHORS COPYING IDEAS README* TODO \
   $PKG/usr/doc/$NAME-$VERSION
 
 cd $PKG
@@ -89,17 +85,17 @@ find . | xargs file | grep "shared object" | grep ELF | cut -f 1 -d : | xargs st
 find . | xargs file | grep "current ar archive" | cut -f 1 -d : | xargs strip -g 2> /dev/null
 
 if [ -d $PKG/usr/man ]; then
- find $PKG/usr/man -type f -exec gzip -9 {} \;
+  find $PKG/usr/man -type f -exec gzip -9 {} \;
 fi
 if [ -d $PKG/usr/info ]; then
- rm $PKG/usr/info/dir
- find $PKG/usr/info -type f -exec gzip -9 {} \;
+  rm $PKG/usr/info/dir
+  find $PKG/usr/info -type f -exec gzip -9 {} \;
 fi
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/slack-desc > $PKG/usr/doc/$NAME-$VERSION/slack-desc
-cat $CWD/$NAME-svn.SlackBuild > $PKG/usr/doc/$NAME-$VERSION/$NAME-svn.SlackBuild
+cat $CWD/$NAME-git.SlackBuild > $PKG/usr/doc/$NAME-$VERSION/$NAME-git.SlackBuild
 
 ADD="enlightenment" \
 requiredbuilder -v -y -s $CWD $PKG

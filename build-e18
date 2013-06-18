@@ -99,7 +99,23 @@ try_build_pkg_git  elemines
 
 # Enlightenment
 try_build_pkg_git  enlightenment
+try_build_pkg_git  e_modules-alarm
+try_build_pkg_git  e_modules-comp-scale
+try_build_pkg_git  e_modules-engage
+try_build_pkg_git  e_modules-everything-places
+try_build_pkg_git  e_modules-everything-websearch
+try_build_pkg_git  e_modules-eweather
+try_build_pkg_git  e_modules-forecasts
+try_build_pkg_git  e_modules-mpdule
+try_build_pkg_git  e_modules-net
+try_build_pkg_git  e_modules-news
+try_build_pkg_git  e_modules-penguins
+try_build_pkg_git  e_modules-photo
+try_build_pkg_git  e_modules-places
 try_build_pkg_git  e_modules-productivity
+
+# Wallpapers
+try_build_pkg_git  e_modules-eenvader.fractal
 
 # Update dependencies graph
 cd "$SBDIR"
