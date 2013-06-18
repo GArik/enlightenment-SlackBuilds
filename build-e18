@@ -80,6 +80,7 @@ try_build_pkg_git  elementary
 try_build_pkg_git  geneet
 try_build_pkg_git  efx
 try_build_pkg_git  esskyuehl
+try_build_pkg_git  libeweather
 
 # Apps
 try_build_pkg_git  ecrire
