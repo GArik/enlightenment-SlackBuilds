@@ -1,0 +1,29 @@
+#!/bin/sh
+# http://www.enlightenment.org/
+
+NAME=detourious
+VERSION=$(date +%Y%m%d)
+CWD=`pwd`
+TMP=${TMP:-/tmp/tgz/e-git}
+
+SOURCE=git://git.enlightenment.org/themes/$NAME.git
+
+if [ ! -d $TMP ]; then
+  mkdir -p $TMP
+fi
+
+# getting source codes
+if [ ! -d $TMP/$NAME ]; then
+  git clone $SOURCE $TMP/$NAME || exit 1
+else
+  cd $TMP/$NAME
+  git pull --ff-only || exit 1
+fi
+
+echo -e "\E[0;32m Build $NAME-$VERSION \E[0;0m"
+
+cd $TMP/$NAME || exit 1
+
+make || exit 1
+chmod 644 *.edj
+cp *.edj $CWD || exit 1

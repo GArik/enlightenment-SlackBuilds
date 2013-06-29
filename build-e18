@@ -118,6 +118,13 @@ try_build_pkg_git  e_modules-productivity
 # Wallpapers
 try_build_pkg_git  e_modules-eenvader.fractal
 
+# Themes
+try_build_thm_git  23oz
+try_build_thm_git  b_and_w
+try_build_thm_git  darkness
+try_build_thm_git  detourious
+try_build_thm_git  efenniht
+
 # Update dependencies graph
 cd "$SBDIR"
 ./depgraph > e18-depgraph.dot
