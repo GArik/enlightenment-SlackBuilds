@@ -81,6 +81,7 @@ try_build_pkg_git  geneet
 try_build_pkg_git  efx
 try_build_pkg_git  esskyuehl
 try_build_pkg_git  libeweather
+try_build_pkg_git  ekbd
 
 # Apps
 try_build_pkg_git  ecrire
