@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+        |-----handy-ruler------------------------------------------------------|
+clouseau: Clouseau (UI inspection tool for the EFL)
+clouseau: 
+clouseau: Clouseau is an UI inspection tool for the EFL. This tool lets you
+clouseau: inspect UI elements and get a lot of their properties, e.g position,
+clouseau: size and weight.
+clouseau: 
+clouseau: 
+clouseau:              http://www.enlightenment.org
+clouseau: 
+clouseau: 
+clouseau: 
