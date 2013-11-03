@@ -93,6 +93,9 @@ try_build_pkg_git  equate
 try_build_pkg_git  maelstrom
 try_build_pkg_git  terminology
 
+# Developer tools
+try_build_pkg_git  expedite
+
 # Games
 try_build_pkg_git  etrophy
 try_build_pkg_git  econcentration
