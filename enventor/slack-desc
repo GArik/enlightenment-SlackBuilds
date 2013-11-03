@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+        |-----handy-ruler------------------------------------------------------|
+enventor: Enventor
+enventor: 
+enventor: Enventor is an EDC editor with some convenient functions.
+enventor: It's brand new and was only started near the begining of June 2013,
+enventor: so expecting it to do everything a mature script editor does is
+enventor: a bit premature, but considering its young age, it does a lot.
+enventor: 
+enventor: 
+enventor:              http://www.enlightenment.org
+enventor: 
+enventor: 

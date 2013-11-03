@@ -94,6 +94,7 @@ try_build_pkg_git  maelstrom
 try_build_pkg_git  terminology
 
 # Developer tools
+try_build_pkg_git  enventor
 try_build_pkg_git  expedite
 
 # Games
