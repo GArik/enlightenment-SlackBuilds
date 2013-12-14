@@ -1,18 +1,18 @@
 #!/bin/sh
 # http://www.enlightenment.org/
 
-NAME=efreet
-VERSION=1.7.9
+NAME=efl
+VERSION=1.8.2
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
 TMP=${TMP:-/tmp/tgz}
 PKG=$TMP/package-$NAME
 
-SOURCE=http://download.enlightenment.org/releases/$NAME-$VERSION.tar.bz2
+SOURCE=http://download.enlightenment.org/rel/libs/$NAME/$NAME-$VERSION.tar.bz2
 
 if [ ! -e $NAME-$VERSION.tar.bz2 ]; then
- wget -c $SOURCE
+  wget -c $SOURCE
 fi
 
 if [ "$ARCH" = "i486" ]; then
@@ -42,10 +42,10 @@ else
 fi
 
 if [ ! -d $TMP ]; then
- mkdir -p $TMP
+  mkdir -p $TMP
 fi
 if [ ! -d $PKG ]; then
- mkdir -p $PKG
+  mkdir -p $PKG
 fi
 
 
@@ -61,12 +61,17 @@ cd $NAME-$VERSION || exit 1
 chown -R root:root .
 find . -perm /111 -exec chmod 755 '{}' \; -o -exec chmod 644 '{}' \;
 
+NOCONFIGURE=1 \
+./autogen.sh # stupid release manager
 CFLAGS="$SLKCFLAGS" \
-CPPFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
 ./configure --prefix=/usr \
  --libdir=/usr/lib${LIBDIRSUFFIX} \
  --mandir=/usr/man \
  --infodir=/usr/info \
+ --enable-image-loader-gif \
+ --enable-image-loader-webp \
+ --disable-pulseaudio \
  --enable-shared \
  --disable-static \
  --build=$CHOST-slackware-linux || exit 1
@@ -74,7 +79,7 @@ make || exit 1
 make install DESTDIR=$PKG || exit 1
 
 mkdir -p $PKG/usr/doc/$NAME-$VERSION
-cp -a AUTHORS COPYING NEWS README TODO \
+cp -a AUTHORS COPYING NEWS README licenses/ \
   $PKG/usr/doc/$NAME-$VERSION
 
 cd $PKG
@@ -83,11 +88,11 @@ find . | xargs file | grep "shared object" | grep ELF | cut -f 1 -d : | xargs st
 find . | xargs file | grep "current ar archive" | cut -f 1 -d : | xargs strip -g 2> /dev/null
 
 if [ -d $PKG/usr/man ]; then
- find $PKG/usr/man -type f -exec gzip -9 {} \;
+  find $PKG/usr/man -type f -exec gzip -9 {} \;
 fi
 if [ -d $PKG/usr/info ]; then
- rm $PKG/usr/info/dir
- find $PKG/usr/info -type f -exec gzip -9 {} \;
+  rm $PKG/usr/info/dir
+  find $PKG/usr/info -type f -exec gzip -9 {} \;
 fi
 
 mkdir -p $PKG/install

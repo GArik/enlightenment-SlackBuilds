@@ -2,14 +2,14 @@
 # http://www.enlightenment.org/
 
 NAME=elementary
-VERSION=1.7.9
+VERSION=1.8.1
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
 TMP=${TMP:-/tmp/tgz}
 PKG=$TMP/package-$NAME
 
-SOURCE=http://download.enlightenment.org/releases/$NAME-$VERSION.tar.bz2
+SOURCE=http://download.enlightenment.org/rel/libs/$NAME/$NAME-$VERSION.tar.bz2
 
 if [ ! -e $NAME-$VERSION.tar.bz2 ]; then
  wget -c $SOURCE

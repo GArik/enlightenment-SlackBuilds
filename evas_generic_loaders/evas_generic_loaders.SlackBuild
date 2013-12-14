@@ -2,14 +2,14 @@
 # http://www.enlightenment.org/
 
 NAME=evas_generic_loaders
-VERSION=1.7.9
+VERSION=1.8.1
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
 TMP=${TMP:-/tmp/tgz}
 PKG=$TMP/package-$NAME
 
-SOURCE=http://download.enlightenment.org/releases/$NAME-$VERSION.tar.bz2
+SOURCE=http://download.enlightenment.org/rel/libs/$NAME/$NAME-$VERSION.tar.bz2
 
 if [ ! -e $NAME-$VERSION.tar.bz2 ]; then
  wget -c $SOURCE
@@ -93,6 +93,5 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/slack-desc > $PKG/usr/doc/$NAME-$VERSION/slack-desc
 cat $CWD/$NAME.SlackBuild > $PKG/usr/doc/$NAME-$VERSION/$NAME.SlackBuild
 
-ADD="evas" \
 requiredbuilder -v -y -s $CWD $PKG
 makepkg -l y -c n $CWD/$NAME-${VERSION//-/_}-$ARCH-$BUILD.txz

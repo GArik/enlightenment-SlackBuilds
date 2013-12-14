@@ -1,0 +1,136 @@
+#!/bin/bash
+
+SBDIR=$(pwd)
+SBPKGDIR="$SBDIR/+packages-git-$(date +%F)"
+SBTHMDIR="$SBDIR/+themes-git-$(date +%F)"
+SBLOG="$SBDIR/build-git-$(date +%F).log"
+set -o pipefail
+
+build_package_git()
+{
+	echo -e "\n=== Start building $1 ($(date +%T)) ===\n" | tee -a "$SBLOG"
+	cd "$1" || return 1
+	"./$1-git.SlackBuild" || { echo "*** Error: failed to build $1" | tee -a "$SBLOG"; return 1; }
+	echo "Finished building $1 ($(date +%T))" | tee -a "$SBLOG"
+	cd "$SBDIR" || return 1
+	if [[ $ARCH ]]; then
+		upgradepkg --install-new --reinstall $1/$1-*-$ARCH-*.txz | tee -a "$SBLOG" || return 1
+		mv $1/$1-*-$ARCH-*.txz "$SBPKGDIR" || return 1
+	else
+		upgradepkg --install-new --reinstall $1/$1-*-*-*.txz | tee -a "$SBLOG" || return 1
+		mv $1/$1-*-*-*.txz "$SBPKGDIR" || return 1
+	fi
+}
+
+build_theme_git()
+{
+	echo -e "\n=== Start building $1 ($(date +%T)) ===\n" | tee -a "$SBLOG"
+	cd themes || return 1
+	"./$1-git.build" || { echo "*** Error: failed to build $1" | tee -a "$SBLOG"; return 1; }
+	echo "Finished building $1 ($(date +%T))" | tee -a "$SBLOG"
+	mv *.edj "$SBTHMDIR" || return 1
+	cd "$SBDIR" || return 1
+}
+
+prompt_exit()
+{
+	local res
+	read -p "Retry, skip, exit? [r,S,e] " SBANS
+	if [[ "$SBANS" == [eE] ]]; then
+		exit 1
+	elif [[ "$SBANS" == [rR] ]]; then
+		res=0
+	else
+		echo -e "\n*** Skip building $1 ***\n" | tee -a "$SBLOG"
+		res=1
+	fi
+	cd "$SBDIR" || return 1
+	return $res
+}
+
+try_build_pkg_git()
+{
+	while true; do
+		build_package_git "$@"
+		if [[ $? == 0 ]]; then
+			break
+		else
+			prompt_exit "$1" || break
+		fi
+	done
+}
+
+try_build_thm_git()
+{
+	# ignore errors as themes are not really important
+	build_theme_git "$@" || cd "$SBDIR"
+}
+
+echo "[ E18 BUILD START $(date +%T) ]" | tee -a "$SBLOG" || exit 1
+mkdir -p "$SBPKGDIR"
+mkdir -p "$SBTHMDIR"
+
+# EFL
+try_build_pkg_git  efl
+try_build_pkg_git  evas_generic_loaders
+try_build_pkg_git  elementary
+
+# Misc. libs and tools
+try_build_pkg_git  geneet
+try_build_pkg_git  efx
+try_build_pkg_git  esskyuehl
+try_build_pkg_git  libeweather
+try_build_pkg_git  ekbd
+
+# Apps
+try_build_pkg_git  ecrire
+try_build_pkg_git  emprint
+try_build_pkg_git  enjoy
+try_build_pkg_git  entrance
+try_build_pkg_git  ephoto
+try_build_pkg_git  equate
+try_build_pkg_git  maelstrom
+try_build_pkg_git  terminology
+
+# Developer tools
+try_build_pkg_git  clouseau
+try_build_pkg_git  enventor
+try_build_pkg_git  expedite
+
+# Games
+try_build_pkg_git  etrophy
+try_build_pkg_git  econcentration
+try_build_pkg_git  efbb
+try_build_pkg_git  elemines
+
+# Enlightenment
+try_build_pkg_git  enlightenment
+try_build_pkg_git  e_modules-alarm
+try_build_pkg_git  e_modules-comp-scale
+try_build_pkg_git  e_modules-engage
+try_build_pkg_git  e_modules-everything-places
+try_build_pkg_git  e_modules-everything-websearch
+try_build_pkg_git  e_modules-eweather
+try_build_pkg_git  e_modules-forecasts
+try_build_pkg_git  e_modules-mpdule
+try_build_pkg_git  e_modules-net
+try_build_pkg_git  e_modules-news
+try_build_pkg_git  e_modules-penguins
+try_build_pkg_git  e_modules-photo
+try_build_pkg_git  e_modules-places
+try_build_pkg_git  e_modules-productivity
+
+# Wallpapers
+try_build_pkg_git  e_modules-eenvader.fractal
+
+# Themes
+try_build_thm_git  23oz
+try_build_thm_git  b_and_w
+try_build_thm_git  darkness
+try_build_thm_git  detourious
+try_build_thm_git  efenniht
+try_build_thm_git  lucax
+
+# Update dependencies graph
+cd "$SBDIR"
+./depgraph > e-git-depgraph.dot

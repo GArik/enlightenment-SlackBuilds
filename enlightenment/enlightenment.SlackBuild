@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=enlightenment
-VERSION=0.17.5
+VERSION=0.18.0-rc2
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
@@ -79,7 +79,7 @@ cp -a AUTHORS COPYING NEWS README \
    $PKG/usr/doc/$NAME-$VERSION
 
 mkdir -p $PKG/etc/X11/xinit
-cat $CWD/xinitrc.enlightenment > $PKG/etc/X11/xinit/xinitrc.enlightenment17
+cat $CWD/xinitrc.enlightenment > $PKG/etc/X11/xinit/xinitrc.enlightenment18
 
 mv $PKG/etc/enlightenment/sysactions.conf $PKG/etc/enlightenment/sysactions.conf.new
 
