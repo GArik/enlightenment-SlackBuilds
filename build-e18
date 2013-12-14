@@ -58,6 +58,9 @@ try_build_pkg  evas_generic_loaders
 try_build_pkg  webkit-efl
 try_build_pkg  elementary
 
+# Bindings
+try_build_pkg  python-efl
+
 # Apps
 try_build_pkg  terminology
 try_build_pkg  eperiodique

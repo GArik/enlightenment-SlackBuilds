@@ -82,6 +82,9 @@ try_build_pkg_git  esskyuehl
 try_build_pkg_git  libeweather
 try_build_pkg_git  ekbd
 
+# Bindings
+try_build_pkg_git  python-efl
+
 # Apps
 try_build_pkg_git  ecrire
 try_build_pkg_git  emprint
