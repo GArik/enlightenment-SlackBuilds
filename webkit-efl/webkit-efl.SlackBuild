@@ -2,16 +2,16 @@
 # http://www.webkit.org/
 
 NAME=webkit-efl
-VERSION=r127150
+VERSION=159807
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
 TMP=${TMP:-/tmp/tgz}
 PKG=$TMP/package-$NAME
 
-SOURCE=http://packages.profusion.mobi/$NAME/$NAME-svn-$VERSION.tar.bz2
+SOURCE=http://download.enlightenment.org/rel/libs/$NAME/$NAME-$VERSION.tar.xz
 
-if [ ! -e $NAME-svn-$VERSION.tar.bz2 ]; then
+if [ ! -e $NAME-$VERSION.tar.xz ]; then
   wget -c $SOURCE
 fi
 
@@ -50,16 +50,18 @@ fi
 
 
 cd $TMP
-tar xvf $CWD/$NAME-svn-$VERSION.tar.bz2 || exit 1
+tar xvf $CWD/$NAME-$VERSION.tar.xz || exit 1
 
 echo -e "\E[0;32m+----------------------------------+\E[0;0m"
 echo -e "\E[0;32m| Start SlackBuild $NAME-$VERSION |\E[0;0m"
 echo -e "\E[0;32m+----------------------------------+\E[0;0m"
 
-cd $NAME-svn-$VERSION || exit 1
+cd $NAME || exit 1
 
 # Fix pkg-config dir
 patch -p0 < $CWD/pc-dir.patch || exit 1
+# Fix freetype include dir
+patch -p0 < $CWD/freetype.patch || exit 1
 
 chown -R root:root .
 find . -perm /111 -exec chmod 755 '{}' \; -o -exec chmod 644 '{}' \;
@@ -67,15 +69,26 @@ find . -perm /111 -exec chmod 755 '{}' \; -o -exec chmod 644 '{}' \;
 mkdir build
 cd build
 cmake \
-  -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
-  -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_INSTALL_PREFIX=/usr \
-  -DLIB_SUFFIX=${LIBDIRSUFFIX} \
-  -DMAN_INSTALL_DIR=/usr/man \
-  -DPORT=Efl \
-  -DSHARED_CORE=ON \
-  ..
+ -DCMAKE_BUILD_TYPE=Release \
+ -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS -Wno-deprecated-declarations" \
+ -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS -Wno-deprecated-declarations" \
+ -DCMAKE_INSTALL_PREFIX=/usr \
+ -DLIB_SUFFIX=${LIBDIRSUFFIX} \
+ -DMAN_INSTALL_DIR=/usr/man \
+ -DPORT=Efl \
+ -DSHARED_CORE=ON \
+ -DENABLE_WEBKIT=ON \
+ -DENABLE_WEBKIT2=ON \
+ -DENABLE_TOOLS=OFF \
+ -DENABLE_WEB_AUDIO=OFF \
+ -DENABLE_VIDEO=OFF \
+ -DENABLE_VIDEO_TRACK=OFF \
+ -DENABLE_BATTERY_STATUS=OFF \
+ -DENABLE_ACCESSIBILITY=OFF \
+ ..
+# VIDEO and AUDIO require gstreamer >= 1.2
+# ACCESSIBILITY reqiures atk >= 2.10
+# BATTERY_STATUS requires e_dbus
 make -j2 || exit 1
 make install DESTDIR=$PKG || exit 1
 cd -
@@ -89,6 +102,9 @@ cp -a Source/WebCore/{LICENSE*,ChangeLog} \
 mkdir -p $PKG/usr/doc/$NAME-$VERSION/WebKit
 cp -a Source/WebKit/{LICENSE,ChangeLog} \
   $PKG/usr/doc/$NAME-$VERSION/WebKit
+mkdir -p $PKG/usr/doc/$NAME-$VERSION/WebKit2
+cp -a Source/WebKit2/ChangeLog \
+  $PKG/usr/doc/$NAME-$VERSION/WebKit2
 mkdir -p $PKG/usr/doc/$NAME-$VERSION/WTF
 cp -a Source/WTF/ChangeLog \
   $PKG/usr/doc/$NAME-$VERSION/WTF
@@ -113,4 +129,4 @@ cat $CWD/slack-desc > $PKG/usr/doc/$NAME-$VERSION/slack-desc
 cat $CWD/$NAME.SlackBuild > $PKG/usr/doc/$NAME-$VERSION/$NAME.SlackBuild
 
 requiredbuilder -v -y -s $CWD $PKG
-makepkg -l y -c n $CWD/$NAME-${VERSION//-/_}-$ARCH-$BUILD.txz
+makepkg -l y -c n $CWD/$NAME-r${VERSION//-/_}-$ARCH-$BUILD.txz

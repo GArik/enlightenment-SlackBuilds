@@ -1,11 +1,32 @@
---- Source/WebKit/PlatformEfl.cmake	2012-08-30 22:44:46.000000000 +0400
-+++ Source/WebKit/PlatformEfl.cmake	2013-04-07 20:09:02.508111647 +0400
-@@ -251,7 +251,7 @@
-     ${CMAKE_BINARY_DIR}/WebKit/efl/ewebkit.pc
-     @ONLY)
- INSTALL(FILES ${CMAKE_BINARY_DIR}/WebKit/efl/ewebkit.pc
--    DESTINATION lib/pkgconfig)
-+    DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
+--- Source/WebKit/PlatformEfl.cmake	2013-12-12 04:55:00.000000000 +0400
++++ Source/WebKit/PlatformEfl.cmake	2013-12-14 16:35:37.095534681 +0400
+@@ -189,11 +189,11 @@
+ configure_file(efl/ewebkit.pc.in ${CMAKE_BINARY_DIR}/WebKit/efl/ewebkit.pc @ONLY)
+ configure_file(efl/EWebKitConfig.cmake.in ${CMAKE_BINARY_DIR}/WebKit/efl/EWebKitConfig.cmake @ONLY)
+ configure_file(efl/EWebKitConfigVersion.cmake.in ${CMAKE_BINARY_DIR}/WebKit/efl/EWebKitConfigVersion.cmake @ONLY)
+-install(FILES ${CMAKE_BINARY_DIR}/WebKit/efl/ewebkit.pc DESTINATION lib/pkgconfig)
++install(FILES ${CMAKE_BINARY_DIR}/WebKit/efl/ewebkit.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
+ install(FILES
+         ${CMAKE_BINARY_DIR}/WebKit/efl/EWebKitConfig.cmake
+         ${CMAKE_BINARY_DIR}/WebKit/efl/EWebKitConfigVersion.cmake
+-        DESTINATION lib/cmake/EWebKit)
++        DESTINATION ${LIB_INSTALL_DIR}/cmake/EWebKit)
  
- UNSET(LIBS_PRIVATE)
+ unset(LIBS_PRIVATE)
+ 
+--- Source/WebKit2/PlatformEfl.cmake	2013-12-12 04:55:00.000000000 +0400
++++ Source/WebKit2/PlatformEfl.cmake	2013-12-14 16:37:56.781688696 +0400
+@@ -366,11 +366,11 @@
+     "${CMAKE_CURRENT_SOURCE_DIR}/UIProcess/API/efl/ewk_window_features.h"
+ )
+ 
+-install(FILES ${CMAKE_BINARY_DIR}/WebKit2/efl/ewebkit2.pc DESTINATION lib/pkgconfig)
++install(FILES ${CMAKE_BINARY_DIR}/WebKit2/efl/ewebkit2.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
+ install(FILES
+         ${CMAKE_BINARY_DIR}/WebKit2/efl/EWebKit2Config.cmake
+         ${CMAKE_BINARY_DIR}/WebKit2/efl/EWebKit2ConfigVersion.cmake
+-        DESTINATION lib/cmake/EWebKit2)
++        DESTINATION ${LIB_INSTALL_DIR}/cmake/EWebKit2)
+ 
+ install(FILES ${EWebKit2_HEADERS} DESTINATION include/${WebKit2_OUTPUT_NAME}-${PROJECT_VERSION_MAJOR})
  
