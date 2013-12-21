@@ -12,7 +12,7 @@ PKG=$TMP/package-$NAME
 SOURCE=http://download.enlightenment.org/releases/echievements-$VERSION.tar.bz2
 
 if [ ! -e echievements-$VERSION.tar.bz2 ]; then
- wget -c $SOURCE
+ wget $SOURCE
 fi
 
 if [ "$ARCH" = "i486" ]; then
