@@ -6,14 +6,14 @@
 # leave one space after the ':'.
 
           |-----handy-ruler------------------------------------------------------|
-elementary: Elementary (EFL toolkit for small touchscreens)
-elementary:
-elementary: Elementary is a widget set. It is a new-style of widget set much more canvas
-elementary: object based than anything else. Why not ETK? Why not EWL? Well they both
-elementary: tend to veer away from the core of Evas, Ecore and Edje a lot to build their
-elementary: own worlds. Also I wanted something focused on embedded devices -
-elementary: specifically small touchscreens. Unlike GTK+ and Qt, 75% of the "widget set"
-elementary: is already embodied in a common core - Ecore, Edje, Evas etc. So this
-elementary: fine-grained library splitting means all of this is shared, just a new
-elementary: widget "personality" is on top.
-elementary:                       http://trac.enlightenment.org/e/wiki/Elementary
+elementary: Elementary
+elementary: 
+elementary: Elementary is a basic widget set library that is easy to use
+elementary: and is based on EFL. It provides the basic building blocks for
+elementary: creating applications and user interfaces.
+elementary: 
+elementary: 
+elementary:                  http://enlightenment.org
+elementary: 
+elementary: 
+elementary: 
