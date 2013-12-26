@@ -66,6 +66,7 @@ try_build_pkg  terminology
 try_build_pkg  eperiodique
 
 # Developer tools
+try_build_pkg  enventor
 try_build_pkg  expedite
 
 # Games
