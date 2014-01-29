@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=elementary
-VERSION=1.8.3
+VERSION=1.8.4
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`

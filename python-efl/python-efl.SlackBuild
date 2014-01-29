@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=python-efl
-VERSION=1.8.0
+VERSION=1.8.1
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
