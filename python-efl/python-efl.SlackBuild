@@ -2,16 +2,16 @@
 # http://www.enlightenment.org/
 
 NAME=python-efl
-VERSION=1.8.1
+VERSION=1.9.0
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
 TMP=${TMP:-/tmp/tgz}
 PKG=$TMP/package-$NAME
 
-SOURCE=http://download.enlightenment.org/rel/bindings/python/$NAME-$VERSION.tar.gz
+SOURCE=http://download.enlightenment.org/rel/bindings/python/$NAME-$VERSION.tar.bz2
 
-if [ ! -e $NAME-$VERSION.tar.gz ]; then
+if [ ! -e $NAME-$VERSION.tar.bz2 ]; then
   wget $SOURCE
 fi
 
@@ -24,7 +24,7 @@ fi
 
 
 cd $TMP
-tar xvf $CWD/$NAME-$VERSION.tar.gz || exit 1
+tar xvf $CWD/$NAME-$VERSION.tar.bz2 || exit 1
 
 echo -e "\E[0;32m+----------------------------------+\E[0;0m"
 echo -e "\E[0;32m| Start SlackBuild $NAME-$VERSION |\E[0;0m"

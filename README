@@ -12,8 +12,8 @@ in the +packages-git-$(date +%F)/ directory; themes will be available in the
 It also computes pretty dependencies graph which you can view with dotty(1)
 or kgraphviewer [3] (you will need requiredbuilder [4] and graphviz [5]).
 
-There are also SlackBuilds for stable versions of the e18 packages and the
-script called 'build-e18' that works in the same manner as 'build-git'.
+There are also SlackBuilds for stable versions of the e19 packages and the
+script called 'build-e19' that works in the same manner as 'build-git'.
 
 Note that all SlackBuilds are completely independent from each other. So if
 you want to update only one component, you can do it easily. Let's assume you

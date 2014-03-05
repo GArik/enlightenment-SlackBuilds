@@ -2,14 +2,14 @@
 # http://www.enlightenment.org/
 
 NAME=enlightenment
-VERSION=0.18.3
+VERSION=0.18.99.17797
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
 TMP=${TMP:-/tmp/tgz}
 PKG=$TMP/package-$NAME
 
-SOURCE=http://download.enlightenment.org/rel/apps/$NAME/$NAME-$VERSION.tar.bz2
+SOURCE=http://download.enlightenment.org/pre-releases/$NAME-$VERSION.tar.bz2
 
 if [ ! -e $NAME-$VERSION.tar.bz2 ]; then
  wget $SOURCE

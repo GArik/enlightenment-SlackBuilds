@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=efl
-VERSION=1.8.5
+VERSION=1.9.2
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
@@ -61,8 +61,6 @@ cd $NAME-$VERSION || exit 1
 chown -R root:root .
 find . -perm /111 -exec chmod 755 '{}' \; -o -exec chmod 644 '{}' \;
 
-NOCONFIGURE=1 \
-./autogen.sh # stupid release manager
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure --prefix=/usr \
@@ -71,9 +69,12 @@ CXXFLAGS="$SLKCFLAGS" \
  --infodir=/usr/info \
  --enable-image-loader-gif \
  --enable-image-loader-webp \
+ --enable-gstreamer \
+ --disable-gstreamer1 \
  --disable-pulseaudio \
  --enable-shared \
  --disable-static \
+ --enable-i-really-know-what-i-am-doing-and-that-this-will-probably-break-things-and-i-will-fix-them-myself-and-send-patches-aaa \
  --build=$CHOST-slackware-linux || exit 1
 make || exit 1
 make install DESTDIR=$PKG || exit 1

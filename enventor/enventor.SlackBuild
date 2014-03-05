@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=enventor
-VERSION=0.1
+VERSION=0.2.0
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
@@ -57,7 +57,7 @@ echo -e "\E[0;32m| Start SlackBuild $NAME-$VERSION |\E[0;0m"
 echo -e "\E[0;32m+----------------------------------+\E[0;0m"
 
 # extra zero suffix
-cd $NAME-$VERSION.0 || exit 1
+cd $NAME-$VERSION || exit 1
 
 chown -R root:root .
 find . -perm /111 -exec chmod 755 '{}' \; -o -exec chmod 644 '{}' \;
