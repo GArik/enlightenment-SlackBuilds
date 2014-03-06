@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=efl
-VERSION=1.8.5
+VERSION=1.8.6
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
