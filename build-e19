@@ -58,6 +58,9 @@ try_build_pkg  evas_generic_loaders
 # try_build_pkg  webkit-efl
 try_build_pkg  elementary
 
+# Misc. libs and tools
+try_build_pkg  efx
+
 # Bindings
 try_build_pkg  python-efl
 
