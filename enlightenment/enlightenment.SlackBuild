@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=enlightenment
-VERSION=0.18.99.17797
+VERSION=0.18.99.18329
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
