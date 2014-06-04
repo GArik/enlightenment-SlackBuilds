@@ -96,6 +96,7 @@ try_build_pkg_git  eruler
 try_build_pkg_git  etui
 try_build_pkg_git  maelstrom
 try_build_pkg_git  empeedee
+try_build_pkg_git  rage
 try_build_pkg_git  terminology
 
 # Developer tools
