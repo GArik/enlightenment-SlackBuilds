@@ -55,6 +55,7 @@ mkdir -p "$SBPKGDIR"
 # EFL
 try_build_pkg  efl
 try_build_pkg  evas_generic_loaders
+try_build_pkg  emotion_generic_players
 # try_build_pkg  webkit-efl
 try_build_pkg  elementary
 
