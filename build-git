@@ -119,6 +119,7 @@ try_build_pkg_git  e_modules-everything-places
 try_build_pkg_git  e_modules-everything-websearch
 try_build_pkg_git  e_modules-eweather
 try_build_pkg_git  e_modules-forecasts
+try_build_pkg_git  e_modules-mem
 try_build_pkg_git  e_modules-mpdule
 try_build_pkg_git  e_modules-net
 try_build_pkg_git  e_modules-news
