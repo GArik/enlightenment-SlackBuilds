@@ -9,9 +9,9 @@ CWD=`pwd`
 TMP=${TMP:-/tmp/tgz}
 PKG=$TMP/package-$NAME
 
-SOURCE=http://download.enlightenment.org/rel/bindings/python/$NAME-$VERSION.tar.bz2
+SOURCE=http://download.enlightenment.org/rel/bindings/python/$NAME-$VERSION.tar.xz
 
-if [ ! -e $NAME-$VERSION.tar.bz2 ]; then
+if [ ! -e $NAME-$VERSION.tar.xz ]; then
   wget $SOURCE
 fi
 
@@ -24,7 +24,7 @@ fi
 
 
 cd $TMP
-tar xvf $CWD/$NAME-$VERSION.tar.bz2 || exit 1
+tar xvf $CWD/$NAME-$VERSION.tar.xz || exit 1
 
 echo -e "\E[0;32m+----------------------------------+\E[0;0m"
 echo -e "\E[0;32m| Start SlackBuild $NAME-$VERSION |\E[0;0m"
