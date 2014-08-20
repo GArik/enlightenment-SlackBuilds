@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=efl
-VERSION=1.10.2
+VERSION=1.11.0
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
@@ -74,7 +74,7 @@ CXXFLAGS="$SLKCFLAGS" \
  --disable-pulseaudio \
  --enable-shared \
  --disable-static \
- --enable-i-really-know-what-i-am-doing-and-that-this-will-probably-break-things-and-i-will-fix-them-myself-and-send-patches-aaa \
+ --enable-i-really-know-what-i-am-doing-and-that-this-will-probably-break-things-and-i-will-fix-them-myself-and-send-patches-aba \
  --build=$CHOST-slackware-linux || exit 1
 make || exit 1
 make install DESTDIR=$PKG || exit 1

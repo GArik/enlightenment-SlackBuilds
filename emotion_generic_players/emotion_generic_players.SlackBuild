@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=emotion_generic_players
-VERSION=1.10.0
+VERSION=1.11.0
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
