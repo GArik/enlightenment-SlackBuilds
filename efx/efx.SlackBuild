@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=efx
-VERSION=1.9.99
+VERSION=1.11.99
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
