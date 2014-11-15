@@ -73,10 +73,7 @@ CXXFLAGS="$SLKCFLAGS" \
  --disable-module-glyr-gmpc \
  --build=$CHOST-slackware-linux || exit 1
 (cd src/bin
- eldbus-codegen empdd.xml
- azy_parser -H empdd.azy)
-(cd src/modules
- azy_parser -H excetra.azy)
+ eldbus-codegen empdd.xml)
 make || exit 1
 make install DESTDIR=$PKG || exit 1
 
