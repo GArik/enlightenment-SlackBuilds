@@ -1,7 +1,7 @@
 #!/bin/sh
 # http://www.enlightenment.org/
 
-NAME=empeedee
+NAME=empc
 VERSION=$(date +%Y%m%d)
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
@@ -9,7 +9,7 @@ CWD=`pwd`
 TMP=${TMP:-/tmp/tgz/e-git}
 PKG=$TMP/package-$NAME
 
-SOURCE=git://git.enlightenment.org/devs/discomfitor/$NAME.git
+SOURCE=git://git.enlightenment.org/apps/$NAME.git
 
 if [ "$ARCH" = "i486" ]; then
   SLKCFLAGS="-O2 -march=i486 -mtune=i686"

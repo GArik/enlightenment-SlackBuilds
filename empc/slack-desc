@@ -5,15 +5,15 @@
 # exactly 11 lines for the formatting to be correct.  It's also customary to
 # leave one space after the ':'.
 
-        |-----handy-ruler------------------------------------------------------|
-empeedee: Empeedee
-empeedee: 
-empeedee: Empeedee is a mpd multiplexer/GUI.
-empeedee: 
-empeedee: 
-empeedee:              http://www.enlightenment.org
-empeedee: 
-empeedee: 
-empeedee: 
-empeedee: 
-empeedee: 
+    |-----handy-ruler------------------------------------------------------|
+epmc: Empc
+epmc: 
+epmc: Empeedee is an EFL-powered MPD frontend.
+epmc: 
+epmc: 
+epmc:              http://www.enlightenment.org
+epmc: 
+epmc: 
+epmc: 
+epmc: 
+epmc: 
