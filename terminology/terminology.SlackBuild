@@ -2,7 +2,7 @@
 # http://www.enlightenment.org/
 
 NAME=terminology
-VERSION=0.7.0
+VERSION=0.8.0
 ARCH=${ARCH:-$(uname -m)}
 BUILD=1ga
 CWD=`pwd`
